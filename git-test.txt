@@ -1,1 +1,2 @@
 "getting git is legit"
+"I love Codeup!"

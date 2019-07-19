@@ -1,3 +1,81 @@
-.fancy-header{
-    color: purple;
+header,h1 {
+    text-align: center;
+}
+
+h3 {
+    color: #ff6666;
+    text-decoration: underline ;
+
+}
+
+body{
+    /*background-color: lightcoral;*/
+    background-image: url("../img/background.jpg");
+    font-family: 'Titillium Web', sans-serif;
+
+
+}
+
+.values,.table {
+    max-width: 250px;
+    margin: auto;
+}
+
+
+
+ul {
+    list-style: square;
+    align-content: center;
+
+}
+
+.column {
+    float: left;
+    width: 25%;
+
+
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+table {
+    background-color: coral;
+    border-radius: 10px ;
+    box-shadow: 5px 10px;
+}
+
+footer{
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+}
+
+
+tr{
+    color: white;
+}
+
+th{
+    color: black;
+}
+
+a:link{
+    color: black;
+}
+
+a:vistited {
+    color: white;
+}
+
+a:hover{
+    color: pink;
+}
+
+a:active{
+    color:teal;
 }

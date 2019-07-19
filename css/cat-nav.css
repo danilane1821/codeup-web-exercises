@@ -1,6 +1,7 @@
 *{
     box-size:border-box;
     padding: 0em;
+    margin: 0em;
 
 }
 
@@ -9,9 +10,10 @@
 .picture {
     background-color: black;
     height: 200px;
-    width: 15%;
+    width: 20%;
     margin-left: 2em;
     margin-top: 2em;
+    margin-bottom: .1em;
     padding: 1em 1em 0em 1em;
     color:white;
     font-weight: bold;
@@ -20,8 +22,8 @@
 
 .nav {
     background-color: black;
-    height: 500px;
-    width:15%;
+    height: 400px;
+    width:20%;
     margin-left: 2em;
     margin-bottom: 1em;
     padding: 1em;

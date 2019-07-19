@@ -5,6 +5,7 @@ header,h1 {
 h3 {
     color: #ff6666;
     text-decoration: underline ;
+    text-decoration: bold;
 
 }
 
@@ -19,6 +20,7 @@ body{
 .values,.table {
     max-width: 250px;
     margin: auto;
+
 }
 
 
@@ -26,8 +28,16 @@ body{
 ul {
     list-style: square;
     align-content: center;
+    background-color: white;
+
+
 
 }
+
+ol {
+    background-color: white;
+}
+
 
 .column {
     float: left;
@@ -41,6 +51,7 @@ ul {
     clear: both;
     display: table;
 }
+
 
 
 table {
@@ -57,7 +68,7 @@ footer{
 
 
 tr{
-    color: white;
+    color: black;
 }
 
 th{
@@ -69,7 +80,7 @@ a:link{
 }
 
 a:vistited {
-    color: white;
+    color: darkblue;
 }
 
 a:hover{

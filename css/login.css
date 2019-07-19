@@ -76,7 +76,7 @@ fieldset {
     padding: 8px;
     color: white;
     font-weight: bold;
-    border: 1px lightgray;
+    border: 1px solid lightgray;
 }
 
 .btn-block {

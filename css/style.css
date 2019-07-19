@@ -2,12 +2,13 @@ header,h1 {
     text-align: center;
 }
 
-h1{
-    color:#ff6666 ;
+
+h1, p{
+    color:#88f292 ;
 }
 
 h3 {
-    color: #ff6666;
+    color: #88f292;
     text-decoration: underline ;
     text-decoration: bold;
 
@@ -15,7 +16,8 @@ h3 {
 
 body{
     /*background-color: lightcoral;*/
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/gbackground.jpg");
+    background-size: cover;
     font-family: 'Titillium Web', sans-serif;
 
 
@@ -59,10 +61,15 @@ ol {
 
 
 table {
-    background-color: coral;
+    background-color: #88f292;
     border-radius: 10px ;
     box-shadow: 5px 10px;
 }
+
+.table>h3{
+    color:black;
+}
+
 
 footer{
     max-width: 350px;
@@ -70,6 +77,9 @@ footer{
     text-align: center;
 }
 
+footer>p{
+    color: black;
+}
 
 tr{
     color: black;

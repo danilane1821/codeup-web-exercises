@@ -1,0 +1,49 @@
+body{
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.main {
+    width: 70%;
+    height: 550px;
+    margin: 0 auto;
+    border: 8px solid white;
+
+
+
+}
+
+.gray-area {
+    width: 70%;
+    height: 350px;
+    background-color: darkgrey;
+    margin-top: 4.5em;
+    padding-top: 50px;
+    position: absolute;
+
+
+}
+
+.error {
+    width: 50%;
+    height: 300px;
+    background-color: white;
+    margin: 0 auto;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    position: relative;
+
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+    background-color: black;
+    position: relative;
+
+}

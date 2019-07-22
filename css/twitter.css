@@ -26,7 +26,7 @@ a {
     color: var(--link-color);
 }
 .top-nav {
-    background: var(--light-bg);
+    background-color: var(--light-bg);
     position: fixed;
     max-width: 100%;
     z-index: 1000;

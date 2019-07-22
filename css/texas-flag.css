@@ -50,7 +50,7 @@ height: 550px;
     border-left: .3em solid transparent;
 
     /* Controlls the size of the stars. */
-    font-size: 75px;
+    font-size: 85px;
 }
  .star:before, .star:after {
                content: '';

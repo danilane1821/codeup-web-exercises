@@ -5,6 +5,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Work Sans', sans-serif;
 }
 
 
@@ -32,8 +33,7 @@ a {
     text-decoration: none;
     font-weight: bolder;
     color:black;
-    font-family: 'Work Sans', sans-serif;
-    font-family: 'Montserrat', sans-serif;
+
 
 }
 
@@ -46,6 +46,7 @@ ul li:not(.logo) {
 .logo {
     margin: auto;
     font-size: 3em;
+    font-family: 'Montserrat', sans-serif;
 }
 
 

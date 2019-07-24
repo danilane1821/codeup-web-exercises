@@ -10,9 +10,9 @@ body {
 
 
 nav {
-
     height: 4.25em;
     background: gray;
+
 
 }
 
@@ -21,6 +21,7 @@ ul {
     height: 100%;
     display: flex;
     align-items: center;
+    margin: 0;
 
 
 }
@@ -55,5 +56,6 @@ ul li:not(.logo) {
 
 
 a:hover {
-    background: blue;
+    color: blue;
+
 }

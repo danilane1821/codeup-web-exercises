@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout 2</title>
+    <style>
+
+
+        * body {
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            grid-template-rows: 10% 1fr 10% 10%;
+            height: 100vh;
+            grid-gap: .5em;
+            grid-template-areas:
+                    "header header"
+                    "nav article"
+                    "nav section"
+                    "footer footer";
+        }
+
+
+        .header {
+            background-color: limegreen;
+            grid-area: header;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .nav {
+            background-color: limegreen;
+            grid-area: nav;
+        }
+
+        .article {
+            background-color: limegreen;
+            grid-area: article;
+        }
+
+        .section {
+            background-color: limegreen;
+            grid-area: section;
+        }
+
+        .footer {
+            background-color: limegreen;
+            grid-area: footer;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <main class="main">
+        <header class="header">
+
+        </header>
+        <nav class="nav">
+
+        </nav>
+        <article class="article">
+
+        </article>
+        <section class="section">
+
+        </section>
+        <footer class="footer">
+
+        </footer>
+    </main>
+
+
+</body>
+</html>

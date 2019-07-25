@@ -1,6 +1,8 @@
 body {
     padding: 0;
     margin: 0;
+    text-align: center;
+
 }
 
 main {
@@ -10,28 +12,33 @@ main {
     height: 500px;
     width: 500px;
     grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+    grid-gap: 5px;
+    padding: 5px;
+    border: 10px white solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
 }
 
 main div {
-    border: 4px solid black;
+
 
 }
 
 .one {
     grid-area: 1 / 3 / 4 / 9;
-    background-color: red;
+    background-color: #BE2126;
 
 }
 
 .two {
     grid-area: 1 / 1 / 3 / 3;
-    background-color: blue;
+    background-color: #394678;
 
 }
 
 .three {
     grid-area: 3 / 1 / 6 / 3;
-    background-color: yellow;
+    background-color: #EFCB32;
 }
 
 .four {
@@ -41,18 +48,18 @@ main div {
 
 .five {
     grid-area: 8 / 1 / 9 / 3;
-    background-color: red;
+    background-color: #BE2126;
 }
 
 .six {
     grid-area: 8 / 3 / 9 / 9;
-    background-color: blue;
+    background-color: #394678;
 
 }
 
 .seven {
     grid-area: 6 / 5 / 8 / 9;
-    background-color: yellow;
+    background-color: #EFCB32;
 }
 
 .eight {

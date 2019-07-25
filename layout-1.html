@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout 1</title>
+
+    <style>
+
+         * body {
+            margin: 0;
+            padding: 0;
+            background: white;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 20% 1fr 15%;
+            grid-template-rows: 15% 1fr 10%;
+            height: 100vh;
+            grid-gap: 1em;
+            grid-template-areas:
+            "header header header"
+            "nav article section"
+            "nav footer footer";
+
+        }
+
+        .header {
+            background-color: yellow;
+            grid-area: header;
+        }
+
+        .main {
+            grid-area: main;
+        }
+
+        .nav {
+            background-color: yellow;
+            grid-area: nav;
+        }
+
+        .article {
+            background-color: yellow;
+            grid-area: article;
+        }
+
+        .section {
+            background-color: yellow;
+            grid-area: section;
+        }
+
+        .footer {
+            background-color: yellow;
+            grid-area: footer;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+  <main class="main">
+    <header class="header">
+
+    </header>
+    <nav class="nav">
+
+    </nav>
+    <article class="article">
+
+    </article>
+    <section class="section">
+
+    </section>
+    <footer class="footer">
+
+    </footer>
+  </main>
+
+
+</body>
+</html>

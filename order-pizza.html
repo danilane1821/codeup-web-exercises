@@ -63,7 +63,7 @@
 <!-- nav tabs end -->
 
 <!-- card 1 start -->
-
+        <form method="POST" action="https://www.elformo.com/forms/4fcc096c-cb19-4b04-9085-5aad868f3710">
         <div class="card" id="crust">
             <div class="card-header text-white bg-primary">
                 Choose size and crust
@@ -91,8 +91,9 @@
                     </ul>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary ml-auto">Next Steps</a>
+            <a href="#cs" class="btn btn-primary ml-auto">Next Steps</a>
         </div>
+
 
 <!-- card 2 start -->
 
@@ -105,7 +106,7 @@
             <div class="card-header">
                 Cheese
             </div>
-            <form>
+
                 <div class="form-group pl-3 pt-3">
                     <label for="cheese">How much?</label>
                     <select class="form-control" name="cheese" id="cheese">
@@ -115,14 +116,14 @@
                         <option>Double</option>
                     </select>
                 </div>
-            </form>
+
         </div>
 
         <div class="card mt-3">
             <div class="card-header">
                Sauce
             </div>
-            <form>
+
                 <div class="form-group pl-3 pt-3">
                     <label for="sauce">What type?</label>
                     <select class="form-control" name="sauce" id="sauce">
@@ -143,12 +144,12 @@
                         <option>Extra</option>
                     </select>
                 </div>
-            </form>
+
         </div>
     </div>
     <div class="btn-group ml-auto" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-primary">Previous Steps</button>
-        <button type="button" class="btn btn-primary">Next Steps</button>
+        <a href="#crust" class="btn btn-primary ml-auto">Previous Steps</a>
+        <a href="#toppings" class="btn btn-primary ml-auto">Next Steps</a>
     </div>
 </div>
 
@@ -185,7 +186,7 @@
                     </ul>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary ml-auto">Checkout<i class="fas fa-shopping-cart m-1"></i></a>
+            <button type="submit" class="btn btn-primary ml-auto">Checkout<i class="fas fa-shopping-cart m-1"></i></button>
         </div>
 
 

@@ -47,16 +47,18 @@ add a variable that does the multiplication for you.
 
 -------------MINE------------------
 
-VAR fullClass= false;
-VAR conflictingSchedule = false;
+var fullClass= false;
+var conflictingSchedule = false;
 
-Var studentEnrolment = (!fullClass && !conflictingSchedule);
+var studentEnrolment = (!fullClass && !conflictingSchedule);
 
 
 
 ------------OTHER--------------------
 
-
+var classIsNotFull; // boolean
+  var classScheduleDoesNotConflict; // boolean
+  var studentEnrolled = classIsNotFull && classScheduleDoesNotConflict;
 
 --------------MINE------------------
 Var itemsBought = true;

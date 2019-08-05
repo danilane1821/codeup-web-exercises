@@ -1,0 +1,91 @@
+------------MINE---------------
+
+var movie = 3;
+Var LittleMermaid = 3;
+Var BrotherBear = 5;
+Var Hercules = 1;
+
+
+var Total1 = Movie * LittleMermaid
+var Total2 = Movie * BortherBear
+var Total3 = movie * Hercules
+
+var totalCost = total 1 + total 2 + total 3;
+
+-----------OTHER---------------
+
+Var littleMermaidDaysRented = 3;
+Var brotherBearDaysRented = 5;
+Var herculesDaysRented = 1;
+
+Var pricePerDayDollars = 3;
+Var rentalTotal =( littleMermaidDaysRented  + brotherBearDaysRented  +
+herculesDaysRented) *
+pricePerDayDollars;
+
+
+
+
+-------------MINE----------------
+
+Var googlePayPerHour = 400;
+Var amazonPayPerHour = 380;
+Var facebookPayPerHour = 350;
+
+Var googleHoursWorked = 6;
+Var amazonHoursWorked = 4;
+Var facebookHoursWorked = 10;
+
+Var totalPay = ( googlePayPerHour * googleHoursWorked) +
+( amazonPayPerHour * amazonHoursWorked) +
+( facebookPayPerHour *
+facebookHoursWorked ) ;
+
+------------OTHER----------------
+
+add a variable that does the multiplication for you.
+
+-------------MINE------------------
+
+VAR fullClass= false;
+VAR conflictingSchedule = false;
+
+Var studentEnrolment = (!fullClass && !conflictingSchedule);
+
+
+
+------------OTHER--------------------
+
+
+
+--------------MINE------------------
+Var itemsBought = true;
+Var expiredOffer = false;
+var premiumMember = true;
+
+Var productOffer = (itemsBought >=2 && expiredOffer) || (premiumMember)
+
+
+
+-----------OTHER------------------------
+
+----------------MINE-----------------------
+
+var username = 'codeup';
+var password = 'notastrongpassword';
+
+Var passwordCharacters = >=5;
+Var usernameInPass = username.inde;
+Var usernameLength = <= 20;
+Var noWhitespace = false;
+
+
+
+
+------------------OTHER--------------------------
+
+
+password.length >= 5;
+password.indexOf(username) === -1;
+username.length <= 20;
+username === (username.trim()) && (password === password.trim());

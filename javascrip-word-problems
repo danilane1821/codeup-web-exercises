@@ -61,15 +61,24 @@ var classIsNotFull; // boolean
   var studentEnrolled = classIsNotFull && classScheduleDoesNotConflict;
 
 --------------MINE------------------
-Var itemsBought = true;
-Var expiredOffer = false;
-var premiumMember = true;
+Var itemsBought =;
+Var expiredOffer =;
+var premiumMember =;
 
 Var productOffer = (itemsBought >=2 && expiredOffer) || (premiumMember)
 
 
 
 -----------OTHER------------------------
+
+
+  var numberOfItems; // number
+  var offerIsValid; // boolean
+  var isPremiumMember; // boolean
+  var productDiscountApplied = offerIsValid && (isPremiumMember || numberOfItems > 2);
+
+
+
 
 ----------------MINE-----------------------
 

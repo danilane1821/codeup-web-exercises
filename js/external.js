@@ -35,10 +35,18 @@ var totalPay = alert('Your total pay is ' + ((Number(googleHoursWorked) * google
 // problem 3
 
 
-var classIsNotFull = confirm('Is class full? Please select OK is yes');
-var classScheduleDoesNotConflict = confirm('Does class conflict with schedule, if yes hit OK?');
-var studentEnrolled = classIsNotFull && classScheduleDoesNotConflict;
+var classIsNotFull = confirm('Is class full? Please select OK if no');
+var classScheduleDoesNotConflict = confirm('Does class conflict with schedule? If no please select OK');
+var studentEnrolled = classIsNotFull && classScheduleDoesNotConflict + alert("You are now enrolled");
+var studentNotEnrolled = !classIsNotFull && !classScheduleDoesNotConflict + alert("You can not enroll.");
+
 
 
 
 // Problem 4
+
+var numberOfItems = prompt('How many items do you have?'); // number
+var offerIsValid = confirm('Is the offer expired? Please select OK if no'); // boolean
+var isPremiumMember = confirm('Are you a premium member? Select OK if yes'); // boolean
+var productDiscountApplied = offerIsValid && (isPremiumMember || Number(numberOfItems) > 2) + alert("Discount applied");
+var discountNotApplied = !offerIsValid  && (!isPremiumMember || Number(numberOfItems) < 2) + alert("Discount not applied");

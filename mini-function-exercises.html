@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mini-function-exercises</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+    // rest of js below
+
+    // ===== MINI PROBLEMS
+    // Write a function, returnFive, that returns the number five. No inputs should be defined.
+    // You have to write a function that returns the number five
+    // pieces of data
+    // name of function is "returnFive"
+    // no inputs
+    // output is returns the value of five
+    function returnFive() {
+        return 5;
+    }
+    console.log(returnFive());
+
+    // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
+
+// name is isFive
+// input is ?
+//return true if argument is number 5 or "5"
+
+
+    function isFive (input) {
+        var output = input ==5;
+        return output;
+    }
+    console.log(isFive(5));
+
+
+    // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
+
+    //name is isShortWord
+    // input is a string
+    // argument is shorter than 5 char
+
+    function isShortWord (input) {
+
+        var output = input.length <=4;
+        return output;
+    }
+
+    console.log(isShortWord("hello"))
+
+
+
+
+
+
+    // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
+
+
+    //name is isSameLength
+    // 2 inputs
+    //
+
+    function isSameLength(input1, input2) {
+        var output = input1.length === input2.length;
+        return output;
+    }
+
+    console.log(isSameLength("hi", "lady"));
+
+
+
+
+    // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
+
+// name is getSmallerSegment
+// 2 inputs
+//
+
+    function getSmallerSegment (input1, input2) {
+        var output = input1.substring(0, input2)
+        return output.toLocaleLowerCase();
+    }
+
+    console.log(getSmallerSegment("DANIELLE", 3))
+
+
+
+</script>
+</body>
+</html>

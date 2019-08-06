@@ -17,7 +17,7 @@ var brotherBearDaysRented = prompt ("How many days did you rent Brother Bear?");
 var herculesDaysRented = prompt ('How many days you rent Hercules?');
 var pricePerDayDollars = 3;
 var rentalTotal;
-var rentalTotal = alert('Your total for all movies is ' + ((Number(littleMermaidDaysRented) * pricePerDayDollars ) + ((Number(brotherBearDaysRented) * pricePerDayDollars))  +
+    rentalTotal = alert('Your total for all movies is $' + ((Number(littleMermaidDaysRented) * pricePerDayDollars ) + ((Number(brotherBearDaysRented) * pricePerDayDollars))  +
     (Number(herculesDaysRented) * pricePerDayDollars)));
 
 // problem 2
@@ -30,7 +30,7 @@ var googleHoursWorked = prompt('How many hours did you work for Google?');
 var amazonHoursWorked = prompt('How many hours did you work for Amazon?');
 var facebookHoursWorked = prompt('How many hours did you work for Facebook?');
 var totalPay;
-var totalPay = alert('Your total pay is ' + ((Number(googleHoursWorked) * googlePayPerHour) + ((Number(amazonHoursWorked) * amazonPayPerHour)) + (Number(facebookHoursWorked) * facebookPayPerHour)));
+    totalPay = alert('Your total pay is $' + ((Number(googleHoursWorked) * googlePayPerHour) + ((Number(amazonHoursWorked) * amazonPayPerHour)) + (Number(facebookHoursWorked) * facebookPayPerHour)));
 
 // problem 3
 

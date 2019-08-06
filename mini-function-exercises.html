@@ -79,11 +79,11 @@
 //
 
     function getSmallerSegment (input1, input2) {
-        var output = input1.substring(0, input2)
-        return output.toLocaleLowerCase();
+        return ((input1.substring(0, input2)) .toLowerCase());
+        // return output.toLocaleLowerCase();
     }
 
-    console.log(getSmallerSegment("DANIELLE", 3))
+    console.log(getSmallerSegment("DANIELLE", 4))
 
 
 

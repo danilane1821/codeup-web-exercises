@@ -51,4 +51,3 @@ var isPremiumMember = confirm('Are you a premium member? Select OK if yes'); // 
 var productDiscountApplied = offerIsValid && (isPremiumMember || Number(numberOfItems) > 2) + alert("Discount applied");
 var discountNotApplied = !offerIsValid  && (!isPremiumMember || Number(numberOfItems) < 2) + alert("Discount not applied");
 
-// DO I NEED TO MERGE BRANCHES?

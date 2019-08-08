@@ -17,49 +17,49 @@
      * Can you refactor your code to use functions?
      */
 
-    //
-    // var enterNumber = confirm("Do you want to enter a number?");
-    //
-    //
-    // if (enterNumber === true) {
-    //     var num = prompt("Enter any number");
-    //
-    //     } else {
-    //         return alert('okay...bye');
-    //     }
-    //
-    // function isNumber(num) {
-    //     return alert((isNaN(num)) + 'that is not a number');
-    // }
-    // isNumber(num);
-    //
-    // function isNumberEvenOrOdd(num) {
-    //     if (num % 2 === 1) {
-    //         return alert('Your number is odd');
-    //     } else {
-    //         return alert('Your number is even')
-    //     }
-    // }
-    //
-    // isNumberEvenOrOdd(num);
-    //
-    // function addOneHundred (num) {
-    //     return alert('Your number + 100 is ' + (+num + 100));
-    // }
-    // addOneHundred(num);
-    //
-    // function positiveOrNegative(num) {
-    //     if (num > 0) {
-    //         return alert(num + " is a positive number");
-    //     } else {
-    //         return alert(num + " is a negative number");
-    //     }
-    // }
-    // positiveOrNegative(num);
+
+    var enterNumber = confirm("Do you want to enter a number?");
+
+
+    if (enterNumber === true) {
+        var num = prompt("Enter any number");
+
+        if(isNaN(num)) {
+            alert("That is not a number")
+        }else {
+            isNumberEvenOrOdd(num);
+            addOneHundred(num);
+            positiveOrNegative(num);
+        }
+
+    }else {
+        return alert('okay...bye');
+    }
 
 
 
+    function isNumberEvenOrOdd(num) {
+        if (num % 2 === 1) {
+            return alert('Your number is odd');
+        } else {
+            return alert('Your number is even')
+        }
+    }
 
+
+
+    function addOneHundred (num) {
+        return alert('Your number + 100 is ' + (+num + 100));
+    }
+
+
+    function positiveOrNegative(num) {
+        if (num > 0) {
+            return alert(num + " is a positive number");
+        } else {
+            return alert(num + " is a negative number");
+        }
+    }
 
 
     /* ########################################################################## */
@@ -107,6 +107,17 @@ function analyzeColor(str) {
 }
 analyzeColor("blue");
 console.log(analyzeColor("red"));
+
+
+//-------------------------------------------
+// better way
+
+
+
+
+
+
+
 
 
 
@@ -171,6 +182,19 @@ function analyzeColor(str) {
 }
 
 console.log(analyzeColor("green"));
+//-------------------------------------
+// better way
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * TODO:
@@ -178,6 +202,11 @@ console.log(analyzeColor("green"));
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+var askForColor = prompt('Please enter a color');
+var result = analyzeColor(askForColor);
+console.log(result);
+alert(result);
 
 /* ########################################################################## */
 
@@ -201,13 +230,46 @@ console.log(analyzeColor("green"));
  * return value.
  */
 
-/**
+
+function calculateTotal(luckyNumber, totalAmount) {
+    // calculate discount %
+   var discountPercent;
+       if(luckyNumber === 0){
+           discountPercent = 0;
+       }else if (luckyNumber === 1){
+           discountPercent = .10;
+       }else if (luckyNumber === 2){
+           discountPercent = .25;
+       }else if (luckyNumber === 3){
+           discountPercent = .35;
+       }else if (luckyNumber === 4) {
+           discountPercent = .50;
+       }else if (luckyNumber === 5){
+           discountPercent = 1;
+       }else {
+           discountPercent = 0;
+       }
+
+       var discountAmount = totalAmount * discountPercent;
+       return totalAmount - discountAmount;
+
+}
+
+    console.log(calculateTotal(4, 100),50);
+
+    /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
  * Prompt the user for their total bill, then use your `calculateTotal` function
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+
+var luckyNumberGen = Math.floor(Math.random() * 6);
+var whatIsYourTotal = +prompt('Enter total bill');
+var userCalulatedTotal = calculateTotal(luckyNumberGen, whatIsYourTotal);
+alert("Your lucky number is " + luckyNumberGen);
+alert ("Your initial price before discount is " + whatIsYourTotal);
+alert('Your final price is ' + userCalulatedTotal);
+
 })();

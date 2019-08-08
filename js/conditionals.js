@@ -147,35 +147,35 @@ function analyzeColor(str) {
     switch (str) {
         case 'red':
             return "strawberries are red";
-            break;
+
 
         case 'orange':
             return "Oranges are orange";
-            break;
+
 
         case 'yellow':
             return "The sun is yellow";
-            break;
+
 
         case 'green':
             return "Grass is green sometimes";
-            break;
+
 
         case 'blue':
             return "The sky is blue";
-            break;
+
 
         case 'indigo':
             return "what is indigo anyway?";
-            break;
+
 
         case 'violet':
             return "violets are flowers but they are blue";
-            break;
+
 
         default:
             return "Thats not a color I know";
-            break;
+
 
 
     }

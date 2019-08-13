@@ -1,24 +1,18 @@
-//
-//
-// var pickNumber = prompt('Please enter a odd number between 1 and 50');
-//
-// console.log("odd number to skip is: " + pickNumber);
-//
-// for (var a = 1; a < 50; a++) {
-//     if (a % 2 == 0) {
-//         continue;
-//     }
-//     if (pickNumber == a) {
-//         console.log("Yikes! Skipping number: " + a);
-//     } else {
-//         console.log("here is an odd number: " + a);
-//
-//     }
-//     if (a >= 49) {
-//         break;
-//     }
-// }
 
+var pickNumber = 0;
+
+while (pickNumber % 2 === 0) {
+    pickNumber = +prompt('Enter an odd number between 1 and 50');
+
+}
+
+for(var i =1; i < 50; i+=2){
+    if(i === pickNumber){
+        console.log('Yikes! skipping number ' + pickNumber);
+        continue;
+    }
+    console.log('here is an odd number ' + i);
+}
 
 
 

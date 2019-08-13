@@ -41,4 +41,13 @@ for (var i = 1; i <= 9; i++)
 }
 
 
+for (var d= 100; d >= 5; d--) {
+   if(d % 5 === 0){
+       console.log(d)
+   }else{
+       continue;
+   }
+
+}
+
 

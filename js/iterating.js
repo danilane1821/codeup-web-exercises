@@ -66,21 +66,25 @@
      */
      var numbers = [1, 2, 3, 4, 5];
 
-    function returnFirst(array) {
-        return (array[0]);
+    function First(array) {
+        return array[0];
     }
 
-    function returnSecond(array) {
-        return (array[1]);
+    function second(array) {
+        return array[1];
 
     }
 
-    function returnThird(array) {
-        return (array(array.length -1));
+    function third(array) {
+        // return (array(array.length -1));
+        return array[array.length - 1];
     }
 
+console.log(First(numbers));
+console.log(second(numbers));
+console.log(third(names));
 
-console.log(returnFirst(numbers));
+
 
 
 })();

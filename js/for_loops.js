@@ -21,14 +21,14 @@ function isOddOrEven() {
         }else{
             console.log(random + " is an odd number");
         }
-
     }
 }
 isOddOrEven();
+//---------------------------
+// way 1
 
 
 for (var i = 1; i <= 9; i++)
-
 {
     var num = "";
 
@@ -39,15 +39,36 @@ for (var i = 1; i <= 9; i++)
 
     console.log(num);
 }
+//-----------------------
+// other simpler way
+
+var x = 1;
+for (var i = 1; i <= 9; i++) {
+    console.log(i * x);
+    x += "i";
+}
+//--------------------------
+//best way
+
+for (var i = 1; i <= 9; i++) {
+    console.log(string(i).repeat(i));
+}
+
+
+//--------------------------
+//next problem
+
 
 
 for (var d= 100; d >= 5; d--) {
    if(d % 5 === 0){
        console.log(d)
-   }else{
-       continue;
    }
-
 }
 
+//-------------------------
+// easier way
 
+for (var d= 100; d >= 5; d-=5) {
+    console.log(d)
+}

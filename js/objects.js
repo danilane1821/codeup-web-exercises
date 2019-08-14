@@ -56,7 +56,7 @@ var person = {
      * and console.log the relevant messages for each person
      */
 
-    //shopper > 200 = 12% discount
+        //shopper > 200 = 12% discount
         // return name, amount before discount, the discount, and amount after discount
         //access our properties and do comparison there
 
@@ -68,10 +68,10 @@ var person = {
 
     shoppers.forEach(function(shopper) {
         if(shopper.amount >= 200){
-           var discount = shopper.amount - (shopper.amount * .12);
-            console.log("Your original amount is " + shopper.amount + " Your discount amount is 12%." + " your total after discount is  " + discount);
+           var discountedAmount = shopper.amount - (shopper.amount * .12);
+            console.log("hi " + shopper.name + " Your original amount is " + shopper.amount + " Your discount amount is 12%." + " your total after discount is  " + discountedAmount);
         }else{
-            console.log("Sorry! You do not get a discount, your total is still " + shopper.amount);
+            console.log("Sorry, " + shopper.name + " You do not get a discount, your total is still " + shopper.amount);
         }
     });
 

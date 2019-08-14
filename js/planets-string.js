@@ -11,7 +11,7 @@
      * console.log planetsArray to check your work
      */
 
-    var planetsArray = planetsString.split('|');
+     planetsArray = planetsString.split('|');
 
     console.log(planetsArray);
 
@@ -29,21 +29,27 @@
      */
 
 
-    console.log(planetsArray.join ("<br>"));
+    // console.log(planetsArray.join ("<br>"));
+
+    planetsString = planetsArray.join("<br>")
+    console.log(planetsString)
 
 
+    // this is useful for when we are pulling info from a database and showing it in the html
 
-    // this is useful for when you are converting to an array because there is already separation
+    // for (var i=planetsArray.length; i--;) {
+    //     planetsArray[i] = '<li>' + planetsArray[i] + '</li>';
+    // }
+    // planetsArray.unshift('<ul>');
+    // planetsArray.push('</ul>');
+    // console.log(planetsArray);
+    // var planetsList = planetsArray.join('');
+    // document.body.innerHTML = planetsList;
 
-    for (var i=planetsArray.length; i--;) {
-        planetsArray[i] = '<li>' + planetsArray[i] + '</li>';
-    }
-    planetsArray.unshift('<ul>');
-    planetsArray.push('</ul>');
-    console.log(planetsArray);
-    var planetsList = planetsArray.join('');
-    document.body.innerHTML = planetsList;
+//-------------------------------------------------
 
+planetsString = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
 
+document.write(planetsString);
 
 })();

@@ -12,6 +12,8 @@
 
             return  Math.PI * Math.pow(this.radius, 2);// TODO: return the proper value
         },
+
+
         logInfo: function (doRounding) {
             // TODO: complete this method.
 
@@ -24,7 +26,6 @@
             }else {
                return this.getArea();
             }
-
 
         }
     };

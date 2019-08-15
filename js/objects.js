@@ -247,6 +247,32 @@ var person = {
 
 
     });
+    //----------------------------------------------
+
+     function createAuthor (firstName, lastName){
+         return {
+             firstName: 'danielle',
+             lastName: 'lane'
+         }
+     }
+
+     function createBook(title, author){
+         return {
+             title: title,
+             author: author
+         }
+     }
+
+
+
+     books.push(createBook("the giving tree", createAuthor("danielle", "lane")));
+
+     books.forEach(function (book, i) {
+         console.log("Book #" + (i + 1));
+         console.log(showBookInfo(book));
+
+
+     });
 
 
 })();

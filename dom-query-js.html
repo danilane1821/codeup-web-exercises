@@ -7,6 +7,7 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<button id="changeH1" type="button">Click Me To Change This Text!</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -14,7 +15,10 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+<button id="changeli" type="button">Click Me To Change The Colors Of The List!</button>
+
 <h2 id="sub-header">Hello Again.</h2>
+<button id="changeH2" type="button">Click Me To Change This To blue!</button>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -24,7 +28,7 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="changetext" type="button">Click Me To Change The Text!</button>
 <script>
     (function() {
         "use strict";
@@ -33,14 +37,21 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        mainHeader.innerHTML = "JavaScript is Cool";
+        document.getElementById("changeH1").addEventListener("click", changeH1Text, false);
+        function changeH1Text () {
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
 
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        document.getElementById("changeH2").addEventListener("click", changeH2Color, false);
+        function changeH2Color () {
+            subHeader.style.color = "blue";
+        }
+
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
@@ -50,19 +61,22 @@
         // TODO: Set text color of li with dbid = 1 to blue
 
 
+        document.getElementById("changeli").addEventListener("click", changeLiColors, false);
 
-        for (var i = 0; i < listItems.length; i++) {
-        var dbidValue = listItems[i].getAttribute("datadbid");
-            if(dbidValue === "1"){
-                listItems[i].style.color = "blue";
+        function changeLiColors () {
+            for (var i = 0; i < listItems.length; i++) {
 
-            }else if(i % 2 === 0){
-                listItems[i].style.color = "gray";
+                var dbidValue = listItems[i].getAttribute("data-dbid");
+                console.log(dbidValue);
+                if (dbidValue === "1") {
+                    listItems[i].style.color = "blue";
+
+                } else if (i % 2 === 0) {
+                    listItems[i].style.color = "gray";
                 }
             }
+        }
         // query selector outside the loop approach
-
-
         // document.querySelector('li[data-dbid = "1"]').style.color = "blue";
         // or we can store it as a variable
 
@@ -72,7 +86,12 @@
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomploshed!";
+
+        document.getElementById("changetext").addEventListener("click", changeParText, false);
+        function changeParText () {
+            subParagraphs[0].innerText = "Mission Accomploshed!";
+
+        }
 
 
 

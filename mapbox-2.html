@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First Mapbox Map</title>
-    <!-- Mapbox CSS -->
+    <title>Map of Washington D.C</title>
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
-
-
-
-    <!-- Custom CSS -->
-
 </head>
 <body>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 600px; height: 400px;'></div>
+<script src="js/mapbox-hide.js"></script>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
+    mapboxgl.accessToken = mapBoxToken;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 8,
-        center: [-98.4916, 29.4252]
+        zoom: 10,
+        center: [-77.0369, 38.9072]
 
     });
 
     var marker = new mapboxgl.Marker()
-        .setLngLat([-98.4916, 29.4260])
+        .setLngLat([-77.0502, 38.8893])
         .addTo(map);
 
 
-
 </script>
+
+
+
 </body>
 </html>

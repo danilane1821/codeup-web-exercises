@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox maps api</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script src="js/mapbox-utils.js"></script>
+<script src="js/mapbox-hide.js"></script>
+<script>
+
+
+    var restaurants = [{
+        name: 'Taco Bell',
+        number: '(210) 695-9105',
+        longLat: [-98.681167, 29.558441]
+
+    },
+    {
+        name: 'Wing Stop',
+        number: '(210) 684-7000',
+        longLat: [-98.663688, 29.555099]
+    },
+    {
+        name: 'Pappadeaux',
+        number: '(210) 340-7143',
+        longLat: [-98.488076, 29.519363]
+    }
+
+
+    ];
+
+
+
+
+    mapboxgl.accessToken = mapBoxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9'
+
+    });
+
+    geocode("San Antonio, Texas", mapBoxToken).then(function(result) {
+        console.log(result)
+        map.setZoom(8)
+        map.setCenter(result);
+
+    });
+
+    function makeMarker(array) {
+        var popup = new mapboxgl.Popup()
+            .setHTML(array.name);
+
+        var marker = new mapboxgl.Marker()
+            .setLngLat(array.longLat)
+            .setPopup(popup)
+            .addTo(map);
+    }
+
+    restaurants.forEach(makeMarker);
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

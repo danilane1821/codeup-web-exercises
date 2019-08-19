@@ -23,13 +23,20 @@
 
     var delay = 5000;
 
+    // var timeoutId = setTimeout(function () {
+    //     mapboxgl.accessToken = mapBoxToken;
+    //     var map = new mapboxgl.Map({
+    //         container: 'map',
+    //         style: 'mapbox://styles/mapbox/satellite-v9',
+    //         zoom: 3,
+    //         center: [-97.4916, 38.8252]});
+    //
+    // }, delay);
+
+
     var timeoutId = setTimeout(function () {
-        mapboxgl.accessToken = mapBoxToken;
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/satellite-v9',
-            zoom: 3,
-            center: [-97.4916, 38.8252]});
+    map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    map.setZoom(3);
 
     }, delay);
 

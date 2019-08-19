@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First Mapbox Map</title>
+    <title>mapbox 4</title>
     <!-- Mapbox CSS -->
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
@@ -19,36 +19,25 @@
 <script src="js/mapbox-utils.js"></script>
 <script src="js/mapbox-hide.js"></script>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
+    mapboxgl.accessToken = mapBoxToken;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 10,
-        center: [-98.4916, 29.4252]
+        center: [-114.334863, 48.411039]
 
     });
 
-    var marker = new mapboxgl.Marker()
-        .setLngLat([-98.4916, 29.4260])
-        .addTo(map);
 
-
-    var popup = new mapboxgl.Popup()
-        .setLngLat([-98.489615, 29.426827])
-        .setHTML("<p>Codeup Rocks!</p>")
-        .addTo(map);
-
-
-    geocode("600 Navarro St #350, San Antonio, TX 78205", mapBoxToken) .then(function (result) {
+    geocode("127 Spokane Avenue, Whitefish, Montana 59937, United States", mapBoxToken) .then(function (result) {
         console.log(result);
     });
 
+    reverseGeocode({lng: -157.8060, lat: 21.2620}, mapBoxToken).then(function(results) {
+        // logs the address for The Alamo
+        console.log(results);
+    });
 
-
-    //
-    // geocode("Paris, Texas", mapBoxToken) .then(function (result) {
-    // map.jumpTo({center: result})
-    //     });
 
 </script>
 </body>

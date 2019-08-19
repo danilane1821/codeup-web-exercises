@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map of San Antonio</title>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 600px; height: 400px;'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-98.4916, 29.4252]
+
+    });
+
+    var delay = 5000;
+
+    var timeoutId = setTimeout(function () {
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-v9',
+            zoom: 2.5,
+            center: [-97.4916, 38.8252]});
+
+    }, delay);
+
+
+</script>
+
+
+
+</body>
+</html>

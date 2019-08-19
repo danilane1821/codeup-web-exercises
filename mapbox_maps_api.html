@@ -53,7 +53,7 @@
 
     function makeMarker(array) {
         var popup = new mapboxgl.Popup()
-            .setHTML(array.name);
+            .setHTML(array.name + "<br>" + array.number);
 
         var marker = new mapboxgl.Marker()
             .setLngLat(array.longLat)

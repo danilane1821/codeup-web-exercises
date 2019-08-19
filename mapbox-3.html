@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map of Washington D.C</title>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<div id='map' style='width: 600px; height: 400px;'></div>
+<script src="js/mapbox-hide.js"></script>
+<script>
+    mapboxgl.accessToken = mapBoxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-77.0369, 38.9072]
+
+    });
+
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-77.0502, 38.8893])
+        .addTo(map);
+
+
+    var lincolnPopup = new mapboxgl.Popup()
+        .setHTML("<p>This is the Lincoln Memorial!</p>")
+        .addTo(marker);
+
+        marker.setPopup(lincolnPopup);
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -21,17 +21,26 @@
 
     });
 
+    var lincolnPopup = new mapboxgl.Popup()
+        .setHTML("<p>This is the Lincoln Memorial!</p>");
+
     var marker = new mapboxgl.Marker()
         .setLngLat([-77.0502, 38.8893])
+        .setPopup(lincolnPopup)
         .addTo(map);
 
+        marker.togglePopup();
 
-    var lincolnPopup = new mapboxgl.Popup()
-        .setHTML("<p>This is the Lincoln Memorial!</p>")
-        .addTo(marker);
 
-        marker.setPopup(lincolnPopup);
 
+
+
+
+
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat([-77.0502, 38.8893])
+    //     .setHTML("<p>Lincoln Memorial!</p>")
+    //     .addTo(map);
 
 
 </script>

@@ -16,6 +16,8 @@
 <body>
 
 <div id='map' style='width: 400px; height: 300px;'></div>
+<script src="js/mapbox-utils.js"></script>
+<script src="js/mapbox-hide.js"></script>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
     var map = new mapboxgl.Map({
@@ -35,6 +37,15 @@
         .setLngLat([-98.489615, 29.426827])
         .setHTML("<p>Codeup Rocks!</p>")
         .addTo(map);
+
+
+    geocode("600 Navarro St #350, San Antonio, TX 78205", mapBoxToken) .then(function (result) {
+        console.log(result);
+    });
+
+    geocode("Paris, Texas", mapBoxToken) .then(function (result) {
+    map.jumpTo({center: result})
+        });
 
 </script>
 </body>

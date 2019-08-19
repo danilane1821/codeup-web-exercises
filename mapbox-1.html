@@ -10,8 +10,9 @@
 <body>
 
 <div id='map' style='width: 600px; height: 400px;'></div>
+<script src="js/mapbox-hide.js"></script>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
+    mapboxgl.accessToken = mapBoxToken;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -23,7 +24,7 @@
     var delay = 5000;
 
     var timeoutId = setTimeout(function () {
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWxhbmUxODIxIiwiYSI6ImNqemloYXIyNjE2a2szYmxlZGI3cGltdWEifQ.Sowoy67sqRdF7Wl9AczzFQ';
+        mapboxgl.accessToken = mapBoxToken;
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/satellite-v9',

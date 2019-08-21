@@ -21,15 +21,41 @@
 1.  Write a function, `filterNumbers()` that takes in an array of mixed data types and returns an array of only the numbers type in ascending order.
 
     ```js
-        filterNumbers(["fred", true, 5, 3]) //[3, 5]
+        
+    
+    
+        var testInput = (["fred", true, 5, 3]) //[3, 5]
+    
+        function filterNumbers (input) {
+        var inOrder = [];
+        for (var i = 0; i < input.length; i++ ){
+        
+         if (typeof input === 'number'){
+            return inOrder.push(input[i]);
+        }
+       }
+        inOrder.sort();
+        return inOrder;
+    }
+    
+  
+    
     ```
+    
+    
         
 2. Write a function, `getOlder()` that takes in array of dog objects and increases the value of the age properties by 1.
 
    ```js
-    //Example Input:
    
-       [
+ 
+   
+   
+    //Example Input:
+    
+
+   
+        var dogs = [
         {   
              name: "Chompers",
              breed: "Pug",
@@ -66,6 +92,7 @@
              age: 11
          }
      ];
+   
    ```
      
 3. Write a function, `washCars()` that takes in a array of car objects and sets the boolean properties of isDirty to false

@@ -1,20 +1,20 @@
 // 1.  Write a function, `filterNumbers()` that takes in an array of mixed data types
 // and returns an array of only the numbers type in ascending order.
 
-// var testInput = ["fred", true, 5, 3];
-//
-// function filterNumbers(input) {
-//     var output = [];
-//     for (var i = 0; i < input.length; i += 1) {
-//         if (typeof input[i] === "number") {
-//             output.push(input[i]);
-//         }
-//     }
-//     output.sort();
-//     return output;
-// }
-//
-// console.log(filterNumbers(testInput));
+var testInput = ["fred", true, 5, 3];
+
+function filterNumbers(input) {
+    var output = [];
+    for (var i = 0; i < input.length; i += 1) {
+        if (typeof input[i] === "number") {
+            output.push(input[i]);
+        }
+    }
+    output.sort();
+    return output;
+}
+
+console.log(filterNumbers(testInput));
 
 
 //2. Write a function, `getOlder()` that takes in array of dog objects
@@ -38,14 +38,14 @@ var dogs = [
     }
 ];
 
-// function getOlder(dogs) {
-//     for (var i = 0; i < dogs.length; i++){
-//         dogs[i].age +=1;
-//     }
-//     return dogs;
-// }
-//
-// console.log(getOlder(dogs));
+function getOlder(dogs) {
+    for (var i = 0; i < dogs.length; i++){
+        dogs[i].age +=1;
+    }
+    return dogs;
+}
+
+console.log(getOlder(dogs));
 
 
 // Write a function, `washCars()` that takes in a array of car objects
@@ -72,15 +72,15 @@ var cars =
     }
 ];
 
-//
-// function washCars(cars) {
-//     cars.forEach(function(car) {
-//         car.isDirty = false;
-//     });
-//     return cars;
-// }
-//
-// console.log(washCars(cars));
+
+function washCars(cars) {
+    cars.forEach(function(car) {
+        car.isDirty = false;
+    });
+    return cars;
+}
+
+console.log(washCars(cars));
 
 
 // 4. Write a function, `adminList()` that takes in an array of user objects
@@ -104,41 +104,41 @@ var users =
 
 
 
-// function adminList (users) {
-//    var numberOfAdmins = 0;
-//    users.forEach(function(user){
-//        if (user.isAdmin){
-//            numberOfAdmins++;
-//        }
-//     });
-//     return numberOfAdmins;
-// }
-//
-// console.log(adminList(users));
+function adminList (users) {
+   var numberOfAdmins = 0;
+   users.forEach(function(user){
+       if (user.isAdmin){
+           numberOfAdmins++;
+       }
+    });
+    return numberOfAdmins;
+}
 
-// function adminList (users) {
-//     var emails = [];
-//     users.forEach(function(user){
-//         if (user.isAdmin){
-//             emails.push(user.email);
-//         }
-//     });
-//     return emails;
-// }
+console.log(adminList(users));
 
-// console.log(adminList(users));
-//
-// function adminList (users) {
-//     var adminObjects = [];
-//     users.forEach(function(user){
-//         if (user.isAdmin){
-//             adminObjects.push(user);
-//         }
-//     });
-//     return adminObjects;
-// }
-//
-// console.log(adminList(users));
+function adminList (users) {
+    var emails = [];
+    users.forEach(function(user){
+        if (user.isAdmin){
+            emails.push(user.email);
+        }
+    });
+    return emails;
+}
+
+console.log(adminList(users));
+
+function adminList (users) {
+    var adminObjects = [];
+    users.forEach(function(user){
+        if (user.isAdmin){
+            adminObjects.push(user);
+        }
+    });
+    return adminObjects;
+}
+
+console.log(adminList(users));
 
 
 //Create a function, `makeSandwichObjects()` that takes in two array of strings, breads and fillings and returns an array of sandwichObjects

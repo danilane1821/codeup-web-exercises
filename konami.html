@@ -60,10 +60,10 @@ h2 {
         $(document).keyup(function (e) {
             keys.push(e.keyCode);
             if (keys.toString().indexOf(konami) >= 0) {
-                alert('You saved yoshi!');
+                alert('You gave yoshi 30 more lives!');
                 $('body').css({'background-image': 'url("img/tenor.gif")', 'background-size': 'cover'});
                 $('h1').html('');
-                $('h2').html('Dont worry...yoshi has 30 more lives');
+                $('h2').html('Dont worry...remember yoshi has 30 more lives!');
                 $('.yoshi').css({'display': 'none'});
                 audio.play();
             }

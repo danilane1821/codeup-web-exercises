@@ -9,7 +9,7 @@ $(document).ready(function() {
     $('li').css('background-color', 'yellow');
     $('h1').css('background-color', 'yellow');
     $('p').css('background-color', 'yellow');
-    $('li', 'h1', 'p').css('background-color', 'yellow');
+    $('li, h1, p').css('background-color', 'yellow');
     alert($('h1').html());
 
 });

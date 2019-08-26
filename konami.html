@@ -15,7 +15,7 @@ h1 {
 
 }
 body {
-    background-color: green;
+    background-color: limegreen;
 }
 
 img {
@@ -26,14 +26,26 @@ img {
     left: 1070px;
 }
 
+h2 {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+
+
 </style>
 <body>
-<h1>Please enter secrete code to save yoshi</h1>
 
-<div class="yoshi">
-    <img class="yoshi-img" src="img/yoshi.png">
-</div>
+    <h1>Please enter secrete code to save yoshi</h1>
+    <h2> </h2>
 
+    <div class="yoshi" src="img/egg.gif">
+
+        <img class="yoshi-img" src="img/yoshi.png">
+
+    </div>
 <script src="js/jquery.js"></script>
 <script>
     "use strict";
@@ -51,6 +63,7 @@ img {
                 alert('You saved yoshi!');
                 $('body').css({'background-image': 'url("img/tenor.gif")', 'background-size': 'cover'});
                 $('h1').html('');
+                $('h2').html('Dont worry...yoshi has 30 more lives');
                 $('.yoshi').css({'display': 'none'});
                 audio.play();
             }

@@ -80,8 +80,8 @@
         });
 
         // first li of the parent ul should have a font color of blue.
-        $('ul').click(function(){
-                $(this).children().first().css('color','blue');
+        $('li').click(function(){
+                $(this).parent().children().first().css('color','blue');
             });
     });
 

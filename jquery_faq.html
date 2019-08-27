@@ -53,6 +53,7 @@
     <li>Phone number: (406)-888-7800</li>
 </ul>
 
+<button class="button" type="button">Click Me!</button>
 
 <script src="js/jquery.js"></script>
 <script>
@@ -66,6 +67,18 @@
 
         $('dt').click(function() {
             $(this).toggleClass('highlight');
+        });
+
+        $('.button').click(function (){
+            $('ul').each(function(){
+                $(this).children().last().css('background-color', 'yellow');
+            });
+        });
+
+        $('h3').click(function(){
+            $('li').each(function(){
+                $(this).css('font-weight', 'bold')
+            });
         });
 
 

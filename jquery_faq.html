@@ -76,9 +76,7 @@
         });
 
         $('h3').click(function(){
-            $('li').each(function(){
-                $(this).css('font-weight', 'bold')
-            });
+            $(this).next().css('font-weight', 'bold');
         });
 
 

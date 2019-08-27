@@ -19,17 +19,16 @@
     //
     // }
 
-
     function last( input) {
-        if(input instanceof String){
-            var newArr = input.split("")
-            var newArrReverse = newArr.reverse()
-            console.log(newArr)
-            return newArrReverse[0];
+        var newArr = [];
+        if(typeof input === "string"){
+            newArr = input.split("")
+        }else if(Array.isArray(input)){
+            newArr = input
         }
-        var arr = input.reverse()
-        return arr[0];
+        return newArr.pop()
     }
+
     console.log(last("three"));
    console.log(last([1,2,3,4]));
    console.log(last(["wow","why","hello"]));

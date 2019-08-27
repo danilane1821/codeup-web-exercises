@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // function last (input) {
+    //
+    //     if(input instanceof String){
+    //         var newArr = input.split("")
+    //         console.log(newArr)
+    //         return newArr.slice(-1);
+    //
+    //     }
+    //     return input.slice(-1);
+    //
+    // }
+
+
+    function last( input) {
+        if(input instanceof String){
+            var newArr = input.split("")
+            var newArrReverse = newArr.reverse()
+            console.log(newArr)
+            return newArrReverse[0];
+        }
+        var arr = input.reverse()
+        return arr[0];
+    }
+    console.log(last("three"));
+   console.log(last([1,2,3,4]));
+   console.log(last(["wow","why","hello"]));
+</script>
+</body>
+</html>
+
+
+
+<!--return arr.slice(-1)-->

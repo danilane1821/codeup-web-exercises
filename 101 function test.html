@@ -19,19 +19,60 @@
     //
     // }
 
-    function last( input) {
+    // function last( input) {
+    //     var newArr = [];
+    //     if(typeof input === "string"){
+    //         newArr = input.split("")
+    //     }else if(Array.isArray(input)){
+    //         newArr = input
+    //     }
+    //     return newArr.pop()
+    // }
+
+
+    // function secondToLast( input) {
+    //     if(typeof input === 'string'){
+    //         var newArr = input.split("")
+    //         var newArrReverse = newArr.reverse()
+    //
+    //     }else if (Array.isArray(input)){
+    //         var newArrReverse = input.reverse()
+    //     }
+    //     return newArrReverse [0,1];
+    // }
+
+
+
+
+<!--    console.log(secondToLast("three"));-->
+<!--   console.log(secondToLast([1,2,3,4]));-->
+<!--   console.log(secondToLast(["wow","why","hello"]));-->
+
+
+
+    // function firstAndLast (arr) {
+    //     var newArr = [];
+    //     var arrShift = arr.shift();
+    //     newArr.push(arrShift);
+    //     arrShift = arr.pop();
+    //     newArr.push(arrShift);
+    //     return newArr;
+    // }
+
+
+    function firstToLast (input) {
         var newArr = [];
-        if(typeof input === "string"){
-            newArr = input.split("")
-        }else if(Array.isArray(input)){
-            newArr = input
-        }
-        return newArr.pop()
+        var arrShift = input.shift()
+        console.log(arrShift)
+        input.push(arrShift)
+        return input;
     }
 
-    console.log(last("three"));
-   console.log(last([1,2,3,4]));
-   console.log(last(["wow","why","hello"]));
+
+    console.log(firstToLast([1, 2, 3, 4]));
+    console.log(firstToLast(["strawberry", "kiwi", "mango", "guava"]));
+
+
 </script>
 </body>
 </html>

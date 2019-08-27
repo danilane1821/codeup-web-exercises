@@ -79,7 +79,10 @@
             $(this).next().css('font-weight', 'bold');
         });
 
-
+        // first li of the parent ul should have a font color of blue.
+        $('ul').click(function(){
+                $(this).children().first().css('color','blue');
+            });
     });
 
 

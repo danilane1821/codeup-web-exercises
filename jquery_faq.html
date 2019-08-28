@@ -15,6 +15,10 @@
 </head>
 <body>
 <DL>
+    <div id ="news-letter">
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span class ='x'><strong>X</strong></span>
+    </div>
     <LH><strong>Yellowstone FAQS</strong></LH>
     <DT><strong>Where can i see the animals? </strong><dd class ="invisible">check at the visitor center for recent sitings
     <DT><strong>How did Yellowstone get its name?</strong> <dd class ="invisible"> Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.” The trappers translated this into French as “Roche Jaune” or “Pierre Jaune.” In 1797, explorer-geographer David Thompson used the English translation—“Yellow Stone.” Lewis and Clark called the Yellowstone River by the French and English forms. Subsequent use formalized the name as “Yellowstone.
@@ -60,29 +64,39 @@
 
 
     $(document).ready(function() {
-
-        $('lh').click(function() {
-            $('dd').toggleClass('invisible');
+//first exercise
+//         $('lh').click(function() {
+//             $('dd').toggleClass('invisible');
+//         });
+//
+//         $('dt').click(function() {
+//             $(this).toggleClass('highlight');
+//         });
+//
+//         $('.button').click(function (){
+//             $('ul').each(function(){
+//                 $(this).children().last().css('background-color', 'yellow');
+//             });
+//         });
+//
+//         $('h3').click(function(){
+//             $(this).next().children().css('font-weight', 'bold');
+//         });
+//
+//         // first li of the parent ul should have a font color of blue.
+//         $('li').click(function(){
+//                 $(this).parent().children().first().css('color','blue');
+//             });
+// second exercise
+        $('.x').click(function(){
+            $('#news-letter').hide();
         });
-
-        $('dt').click(function() {
-            $(this).toggleClass('highlight');
-        });
-
-        $('.button').click(function (){
-            $('ul').each(function(){
-                $(this).children().last().css('background-color', 'yellow');
-            });
-        });
+        $('ul').hide()
 
         $('h3').click(function(){
-            $(this).next().children().css('font-weight', 'bold');
+           $(this).next().slideToggle()
         });
 
-        // first li of the parent ul should have a font color of blue.
-        $('li').click(function(){
-                $(this).parent().children().first().css('color','blue');
-            });
     });
 
 

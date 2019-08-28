@@ -15,10 +15,12 @@
 </head>
 <body>
 <DL>
+
     <div id ="news-letter">
         <h1>Would you like to sign up for our newsletter?</h1>
         <span class ='x'><strong>X</strong></span>
     </div>
+    <h2> </h2>
     <LH><strong>Yellowstone FAQS</strong></LH>
     <DT><strong>Where can i see the animals? </strong><dd class ="invisible">check at the visitor center for recent sitings
     <DT><strong>How did Yellowstone get its name?</strong> <dd class ="invisible"> Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.” The trappers translated this into French as “Roche Jaune” or “Pierre Jaune.” In 1797, explorer-geographer David Thompson used the English translation—“Yellow Stone.” Lewis and Clark called the Yellowstone River by the French and English forms. Subsequent use formalized the name as “Yellowstone.
@@ -96,7 +98,9 @@
         $('h3').click(function(){
            $(this).next().slideToggle()
         });
-
+         setTimeout(function () {
+            $('h2').html('please register for our site!').css("color", "red")
+        }, 8000);
     });
 
 

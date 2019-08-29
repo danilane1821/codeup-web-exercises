@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practice ajax</title>
+</head>
+<body>
+
+//https://swapi.co/api/films/
+//console.log a few Star Wars film titles.
+
+
+
+
+//Make a few AJAX GET requests to HookBin and try adding different query string key value pairs.
+
+
+
+<form method="GET" action="https://hookbin.com/mZWgmN8zNRsPpP7YDV3b">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <input type="submit">
+</form>
+
+
+
+<script src="js/jquery.js"></script>
+<script>
+
+$.ajax('https://swapi.co/api/films/').done(function (data) {
+    // console.log(data.results[0].title);
+    for(var i = 0; i < data.results.length; i ++){
+        console.log(data.results[i].title);
+    }
+
+    $.ajax('https://hookbin.com/mZWgmN8zNRsPpP7YDV3b/?cities=sanantonio&dani=rad').done(function (){
+        console.log(data);
+    });
+});
+
+
+
+
+
+</script>
+</body>
+</html>

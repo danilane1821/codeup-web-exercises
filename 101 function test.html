@@ -144,21 +144,34 @@
     // console.log(countEvens([1, 7, 5, 3,]));
     // console.log(countEvens([1, 8, 3,9]));
 
+    //
+    // function getUniqueValues (arry) {
+    //
+    //     var result = [];
+    //     arry.forEach(function(item) {
+    //         if(result.indexOf(item) < 0) {
+    //             result.push(item);
+    //         }
+    //     });
+    //     return result;
+    // }
+    //
+    // console.log(getUniqueValues(["apple","kiwi","apple", "banana","dog","dog"]));
+    // console.log(getUniqueValues(["aa","a","bbb","lllll","aa"]));
 
-    function shortestString (arr) {
 
 
-        arr.forEach(function(str){
-            var shortest = 1;
-            if(str.length <= shortest.length){
-                shortest.push(str);
-            }
+    function elementTimesTwo (arr) {
+        var newArr = [];
+        arr.forEach(function(num){
+            var multiply = num * 2
+            newArr.push(multiply)
         });
-        return shortest;
+        return newArr;
     }
 
-    console.log(shortestString(["apple","kiwi","banana","dog"]));
-    console.log(shortestString(["aa","a","bbb","lllll"]));
+    console.log(elementTimesTwo([1,2,3]));
+    console.log(elementTimesTwo([10,20,30]));
 
 
 </script>

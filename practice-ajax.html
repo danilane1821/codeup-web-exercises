@@ -33,19 +33,48 @@
 
 <script src="js/jquery.js"></script>
 <script>
+// ajax GET request to receive certain data back
+// $.ajax('https://swapi.co/api/films/').done(function (data) {
+//     // console.log(data.results[0].title);
+//     for(var i = 0; i < data.results.length; i ++){
+//         console.log(data.results[i].title);
+//
+// }
 
-$.ajax('https://swapi.co/api/films/').done(function (data) {
-    // console.log(data.results[0].title);
-    for(var i = 0; i < data.results.length; i ++){
-        console.log(data.results[i].title);
+
+// GET request to manually adding in a query string
+
+
+//     $.ajax('https://hookb.in/mZWgmN8zNRsPpP7YDV3b/?dani=rad').done(function (){
+//         console.log(data);
+// //     });
+// });
+
+//GET request of query sting without adding it url.
+var settings1 = {
+    data: {
+        q: "adorable dogs",
+        order: "backwards",
+        limit: 7
     }
+};
 
-    $.ajax('https://hookbin.com/mZWgmN8zNRsPpP7YDV3b/?cities=sanantonio&dani=rad').done(function (){
-        console.log(data);
-    });
+
+$.ajax('https://hookb.in/mZWgmN8zNRsPpP7YDV3b', settings1).done(function (data){
+    console.log(data)
 });
 
-
+//Post request with no query string
+// var settings = {
+//         method: "POST",
+//         data: {
+//             username: "danielle",
+//             password: "127DEL"
+//         }
+//     };
+// $.ajax('https://hookb.in/mZWgmN8zNRsPpP7YDV3b', settings).done(function (data){
+//     console.log(data)
+// });
 
 
 

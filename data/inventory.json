@@ -30,5 +30,23 @@
             "tool"
         ],
         "price": 10
+    },
+    {
+        "title": "JackHammer",
+        "quantity": 12,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 300
+    },
+    {
+        "title": "Flash light",
+        "quantity": 7,
+        "categories": [
+            "tool"
+
+        ],
+        "price": 15
     }
 ]

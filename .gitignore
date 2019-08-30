@@ -1,4 +1,4 @@
 .idea/*
 *.iml
 secret.txt
-mapbox-hide.js
+keys.js

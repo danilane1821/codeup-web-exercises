@@ -161,18 +161,61 @@
 
 
 
-    function elementTimesTwo (arr) {
-        var newArr = [];
-        arr.forEach(function(num){
-            var multiply = num * 2
-            newArr.push(multiply)
+    // function elementTimesTwo (arr) {
+    //     var newArr = [];
+    //     arr.forEach(function(num){
+    //         var multiply = num * 2
+    //         newArr.push(multiply)
+    //     });
+    //     return newArr;
+    // }
+    //
+    // console.log(elementTimesTwo([1,2,3]));
+    // console.log(elementTimesTwo([10,20,30]));
+
+
+    var shoppingCart = {
+        "tax": .08,
+        "items": [
+            {
+                "title": "orange juice",
+                "price": 3.99,
+                "quantity": 1
+            },
+            {
+                "title": "rice",
+                "price": 1.99,
+                "quantity": 3
+            },
+            {
+                "title": "beans",
+                "price": 0.99,
+                "quantity": 3
+            },
+            {
+                "title": "chili sauce",
+                "price": 2.99,
+                "quantity": 1
+            },
+            {
+                "title": "chocolate",
+                "price": 0.75,
+                "quantity": 9
+            }
+        ]
+    };
+
+
+    function totalNumberOfItems (arr) {
+        var count = 0;
+        arr.forEach(function(quan){
+            count = count + quan.quantity;
+            console.log(count)
         });
-        return newArr;
+        return count;
     }
 
-    console.log(elementTimesTwo([1,2,3]));
-    console.log(elementTimesTwo([10,20,30]));
-
+    totalNumberOfItems(shoppingCart);
 
 </script>
 </body>

@@ -24,11 +24,16 @@
     </style>
 </head>
 <body>
-<h1 class="city-name">San Antonio</h1>
-<div id="main">
+    <h1 class="city-name">San Antonio</h1>
+    <div id="main">
 
-</div>
+    </div>
+    <div>
+        <input class="lat" type="text">
+        <input class="lon" type="text">
 
+
+    </div>
 <script src="js/jquery.js"></script>
 <script src="js/keys.js"></script>
 <script>
@@ -80,7 +85,6 @@
     //ajax request for dark sky API
 
     $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
-       // data console.log(data)
         console.log(data);
 
         // creating html with for loop
@@ -100,6 +104,7 @@
 
             $('#main').html(html);
 
+    // this function compares my icons with the API's weather icons
 
         function checkIcon (icons, apiIcon) {
 

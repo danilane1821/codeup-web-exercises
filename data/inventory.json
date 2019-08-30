@@ -32,7 +32,7 @@
         "price": 10
     },
     {
-        "title": "JackHammer",
+        "title": "Jack Hammer",
         "quantity": 12,
         "categories": [
             "tool",
@@ -41,8 +41,17 @@
         "price": 300
     },
     {
-        "title": "Flash light",
+        "title": "Flash Light",
         "quantity": 7,
+        "categories": [
+            "tool"
+
+        ],
+        "price": 15
+    },
+    {
+        "title": "Saw",
+        "quantity": 19,
         "categories": [
             "tool"
 

@@ -6,9 +6,10 @@
     <style>
         .info{
             background-color: #EED0D4;
-            width: 30%;
+            max-width: 50%;
             text-align: center;
             border: #b1636e 1px solid;
+            padding: 0 10px 0 10px;
 
         }
         #main {
@@ -33,43 +34,43 @@
 <script>
     // Array of icon objects
     var icons = [{
-        link: "url('icons/weatherIcons/SVG/Sun.svg')",
+        link: "icons/weatherIcons/SVG/Sun.svg",
         name: "clear-day"
     },
         {
-            link: "url('icons/weatherIcons/SVG/Moon-Full.svg')",
+            link: "icons/weatherIcons/SVG/Moon-Full.svg",
             name: "clear-night"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Cloud-Rain.svg')",
+            link: "icons/weatherIcons/SVG/Cloud-Rain.svg",
             name: "rain"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Snowflake.svg')",
+            link: "icons/weatherIcons/SVG/Snowflake.svg",
             name: "snow"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Cloud-Hail.svg')",
+            link: "icons/weatherIcons/SVG/Cloud-Hail.svg",
             name: "sleet"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Wind.svg')",
+            link: "icons/weatherIcons/SVG/Wind.svg",
             name: "wind"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Cloud-Fog.svg')",
+            link: "icons/weatherIcons/SVG/Cloud-Fog.svg",
             name: "fog"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Cloud.svg')",
+            link: "icons/weatherIcons/SVG/Cloud.svg",
             name: "cloudy"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Cloud-Sun.svg')",
+            link: "icons/weatherIcons/SVG/Cloud-Sun.svg",
             name: "partly-cloudy-day"
         },
         {
-            link: "url('icons/weatherIcons/SVG/Cloud-Moon.svg')",
+            link: "'icons/weatherIcons/SVG/Cloud-Moon.svg",
             name: "partly-cloudy-night"
         }
     ];
@@ -80,7 +81,7 @@
 
     $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
        // data console.log(data)
-        console.log(data.daily.data[1]);
+        console.log(data);
 
         // creating html with for loop
 
@@ -88,6 +89,7 @@
 
         for(var i = 0; i < 3; i++){
                 html += "<div class='info'>";
+                html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
                 html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMin + "°" + "</h2>";
                 html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
                 html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
@@ -98,6 +100,15 @@
 
             $('#main').html(html);
 
+
+        function checkIcon (icons, apiIcon) {
+
+           for(var i = 0; i < icons.length; i++){
+               if(icons[i].name === apiIcon){
+                   return icons[i].link;
+               }
+           }
+        }
 
 
     });

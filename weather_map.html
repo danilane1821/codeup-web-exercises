@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <style>
+        .info{
+            background-color: #EED0D4;
+            width: 30%;
+            text-align: center;
+            border: #b1636e 1px solid;
+
+        }
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .city-name {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1 class="city-name">San Antonio</h1>
+<div id="main">
+
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/keys.js"></script>
+<script>
+    // Array of icon objects
+    var icons = [{
+        link: "url('icons/weatherIcons/SVG/Sun.svg')",
+        name: "clear-day"
+    },
+        {
+            link: "url('icons/weatherIcons/SVG/Moon-Full.svg')",
+            name: "clear-night"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Cloud-Rain.svg')",
+            name: "rain"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Snowflake.svg')",
+            name: "snow"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Cloud-Hail.svg')",
+            name: "sleet"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Wind.svg')",
+            name: "wind"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Cloud-Fog.svg')",
+            name: "fog"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Cloud.svg')",
+            name: "cloudy"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Cloud-Sun.svg')",
+            name: "partly-cloudy-day"
+        },
+        {
+            link: "url('icons/weatherIcons/SVG/Cloud-Moon.svg')",
+            name: "partly-cloudy-night"
+        }
+    ];
+
+
+
+    //ajax request for dark sky API
+
+    $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
+       // data console.log(data)
+        console.log(data.daily.data[1]);
+
+        // creating html with for loop
+
+        var html = '';
+
+        for(var i = 0; i < 3; i++){
+                html += "<div class='info'>";
+                html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMin + "°" + "</h2>";
+                html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
+                html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
+                html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
+                html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
+                html += "</div>";
+            }
+
+            $('#main').html(html);
+
+
+
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -31,6 +31,7 @@
     <div>
         <input class="lat" type="text">
         <input class="lon" type="text">
+        <button class="btn" type="button">Lets check the weather!</button>
 
 
     </div>
@@ -84,39 +85,39 @@
 
     //ajax request for dark sky API
 
-    $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
-        console.log(data);
-
-        // creating html with for loop
-
-        var html = '';
-
-        for(var i = 0; i < 3; i++){
-                html += "<div class='info'>";
-                html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
-                html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMin + "°" + "</h2>";
-                html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
-                html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
-                html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
-                html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
-                html += "</div>";
-            }
-
-            $('#main').html(html);
-
-    // this function compares my icons with the API's weather icons
-
-        function checkIcon (icons, apiIcon) {
-
-           for(var i = 0; i < icons.length; i++){
-               if(icons[i].name === apiIcon){
-                   return icons[i].link;
-               }
-           }
-        }
-
-
-    });
+    // // $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
+    // //     console.log(data);
+    //
+    //     // creating html with for loop
+    //
+    //     var html = '';
+    //
+    //     for(var i = 0; i < 3; i++){
+    //             html += "<div class='info'>";
+    //             html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+    //             html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMin + "°" + "</h2>";
+    //             html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
+    //             html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
+    //             html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
+    //             html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
+    //             html += "</div>";
+    //         }
+    //
+    //         $('#main').html(html);
+    //
+    // // this function compares my icons with the API's weather icons
+    //
+    //     function checkIcon (icons, apiIcon) {
+    //
+    //        for(var i = 0; i < icons.length; i++){
+    //            if(icons[i].name === apiIcon){
+    //                return icons[i].link;
+    //            }
+    //        }
+    //     }
+    //
+    //
+    // });
 
 
 

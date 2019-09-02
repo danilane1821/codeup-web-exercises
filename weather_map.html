@@ -170,8 +170,10 @@
         });
 
         // marker for mapbox
-        var marker = new mapboxgl.Marker()
-            .setLngLat([-98.4916,29.4252])
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat([-98.4916, 29.4252])
             .addTo(map);
 
     });

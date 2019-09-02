@@ -51,6 +51,8 @@
 
     </article>
 
+
+
     <article>
         <h3>Top Pets</h3>
         <section>Beginning</section>
@@ -89,24 +91,24 @@
 
     // Highlight all sections
 
-    $('section').css('background-color', 'yellow');
-
-    // Highlight all articles
-    $('article').css('background-color', 'blue');
+    // $('section').css('background-color', 'yellow');
+    //
+    // // Highlight all articles
+    // $('article').css('background-color', 'blue');
 
 
 
     // ========================= .first() =========================
 
     // Highlight the first article
-    $('article').first().css('background-color', 'red');
+    // $('article').first().css('background-color', 'red');
 
 
 
     // ========================= .last() =========================
 
     // Highlight the last article
-    $('article').last().css('background-color', 'orange');
+    // $('article').last().css('background-color', 'orange');
 
 
 
@@ -114,27 +116,31 @@
     // ========================= .next() =========================
 
     // Highlight the second article
-    $('section').next().css('background-color', 'green');
+    // $('article').first().next().css('background-color', 'green');
 
     // Highlight the third li of the entire page
-
+    // $('li').first().next().next().css('background-color', 'purple');
 
 
 
     // ========================= .children() =========================
 
     // Highlight the children of all the ordered lists
+    // $('ol').children().css('background-color', 'purple');
 
     // Highlight all the sections of the first article
-
+    // $('article').first().children().css('background-color', 'gold');
     // Highlight the ordered list of the first article
-
+    // $('article').first().children().last().children().css('background-color', 'silver');
 
 
 
     // ========================= .parent() =========================
 
     // Highlight the entire ordered list when a list item is clicked
+    // $('li').click(function (){
+    //     $(this).parent().css('background-color', 'limegreen');
+    // });
 
 
 
@@ -142,12 +148,19 @@
     // ========================= .each() =========================
 
     // Highlight the first nested element inside all article elements
-
+    // $('article').each(function(index, element) {
+    //     $(this).children().first().css('background-color', 'yellow');
+    // });
 
     // Highlight the second list item of all ordered lists
-
+    // $('ol').each(function(index, element){
+    //     $(this).children().next().first().css('background-color', 'red');
+    // });
 
     // Highlight the third list item of all ordered lists
+    // $('ol').each(function(index, element){
+    //     $(this).children().next().first().next().css('background-color', 'blue');
+    // });
 
 
 
@@ -156,11 +169,24 @@
 
     // Highlight the first li of the second ordered list
 
+    // $('article').first().next().children().last().children().children().first().css('background-color', 'green');
 
     // alert each of the top five items when double clicking on the header for a section
-
+    // $('h3').dblclick(function(){
+    //     $(this).parent().children().last().children().children().each(function(index, element){
+    //         alert($(element).text());
+    //     });
+    // });
 
     // Give a azure background color to every other list item (first item should be azure)
+
+    $('ol').each(function(indexI, element) {
+        $(element).children().each(function(indexJ) {
+            if (indexJ % 2 == 0) {
+                $(this).css('background-color', 'azure');
+            }
+        });
+    });
 
 
 

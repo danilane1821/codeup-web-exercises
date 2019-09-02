@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
     <style>
         .info{
             background-color: #EED0D4;
@@ -21,6 +22,14 @@
         .city-name {
             text-align: center;
         }
+
+        #map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
     </style>
 </head>
 <body>
@@ -29,14 +38,22 @@
 
     </div>
     <div>
-        <input class="lat" type="text">
-        <input class="lon" type="text">
+        <input class="lat" type="text" placeholder="Latitude">
+        <input class="lon" type="text" placeholder="Longitude">
         <button class="btn" type="button">Lets check the weather!</button>
 
+    </div>
 
+    <!--    mapbox style div-->
+    <div id="map-container">
+        <div id='map' style='width: 870px; height: 400px;'></div>
     </div>
 <script src="js/jquery.js"></script>
 <script src="js/keys.js"></script>
+
+    <!--    mapbox js-->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.js'></script>
+
 <script>
     // Array of icon objects
     var icons = [{
@@ -141,7 +158,21 @@
 
         });
 
+        //mapbox info
 
+        mapboxgl.accessToken = mapBoxToken;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 10,
+            center: [-98.4916, 29.4252]
+
+        });
+
+        // marker for mapbox
+        var marker = new mapboxgl.Marker()
+            .setLngLat([-98.4916,29.4252])
+            .addTo(map);
 
     });
 

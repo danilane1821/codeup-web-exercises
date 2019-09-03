@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .info{
-            background-color: #EED0D4;
-            max-width: 50%;
+            background-color: #2F3E46;
             text-align: center;
-            border: #b1636e 1px solid;
-            padding: 0 10px 0 10px;
+            width: 550px;
+            margin: 5px;
+            border: #52796F 1px solid;
+           padding-top: 10px;
 
         }
         #main {
@@ -27,6 +28,25 @@
             align-items: center;
         }
 
+        body {
+            background-color: #52796F;
+        }
+
+        h3 {
+            color: #5DA0B6;
+        }
+
+        p > strong {
+            color: #CAD2C5;
+        }
+
+        p {
+            color: #5DA0B6;
+        }
+
+        h2 {
+            color: #CAD2C5;
+        }
 
 
     </style>
@@ -44,7 +64,7 @@
 
 <!--    mapbox style div-->
     <div id="map-container">
-        <div id='map' style='width: 2000px; height: 530px;'></div>
+        <div id='map' style='width: 2000px; height: 600px;'></div>
     </div>
     <pre id='coordinates' class='coordinates'></pre>
 
@@ -117,9 +137,9 @@
         var dates = checkDate(data);
 
         for(var i = 0; i < 3; i++){
-                html += "<div class='info container-fluid'>";
-                html += "<h3>" + dates[i] + "</h3>";
-                html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
+                html += "<div class='info container'>";
+                html += "<h3>" + checkDate(data.daily.data[i].time) + "</h3>";
+                html += "<h2>" + Math.round(data.daily.data[i].temperatureMin) + "° /" + " " + Math.round(data.daily.data[i].temperatureMax) + "°" + "</h2>";
                 html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
                 html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
                 html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
@@ -146,7 +166,7 @@
         mapboxgl.accessToken = mapBoxToken;
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9',
+            style: 'mapbox://styles/mapbox/dark-v9',
             zoom: 10,
             center: [-98.4916, 29.4252]
 
@@ -187,12 +207,12 @@
 
             $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyToken + "/" + lat + ',' + lng).done(function (data) {
                 var html = '';
-                var dates = checkDate(data);
+
 
                 for (var i = 0; i < 3; i++) {
-                    html += "<div class='info container-fluid'>";
-                    html += "<h3>" + dates[i] + "</h3>";
-                    html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
+                    html += "<div class='info container'>";
+                    html += "<h3>" +  checkDate(data.daily.data[i].time) + "</h3>";
+                    html += "<h2>" +  Math.round(data.daily.data[i].temperatureMin) + "° /" + " " + Math.round(data.daily.data[i].temperatureMax) + "°" + "</h2>";
                     html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
                     html += "<p>" + "<strong>" + "Clouds: " + "</strong>" + data.daily.data[i].summary + "</p>";
                     html += "<p>" + "<strong>" + "Humidity: " + "</strong>" + data.daily.data[i].humidity + "</p>";
@@ -207,19 +227,15 @@
         marker.on('dragend', onDragEnd);
 
 
-        //this function checks the date to display in HTML
+        //this function checks and converts the date to display in HTML
         function checkDate (data) {
-            var dates = [];
-            for (var i = 0; i < 3; i++) {
 
-                var date = new Date(data.daily.data[i].time * 1000 + 3600000);
-                dates.push(date);
-                console.log(dates);
+                var dateObject = new Date(data * 1000);
+                var month = dateObject.getUTCMonth() + 1;
+                var day = dateObject.getUTCDate();
+                var year = dateObject.getUTCFullYear();
+                return month + "/" + day + "/" + year;
             }
-            return dates;
-        }
-
-
     });
 
 

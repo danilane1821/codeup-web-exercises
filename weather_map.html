@@ -51,17 +51,12 @@
     <div id="main">
 
     </div>
-    <div>
-        <input class="lat" type="text" placeholder="Latitude">
-        <input class="lon" type="text" placeholder="Longitude">
-        <button class="btn" type="button">Lets check the weather!</button>
-
-    </div>
 
     <!--    mapbox style div-->
     <div id="map-container">
         <div id='map' style='width: 870px; height: 400px;'></div>
     </div>
+    <pre id='coordinates' class='coordinates'></pre>
 
 <script src="js/jquery.js"></script>
 <script src="js/keys.js"></script>
@@ -115,27 +110,27 @@
 
 
 
-    //ajax request for dark sky API
+    // //ajax request for dark sky API
 
-    $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
-        console.log(data);
-
-        // creating html with for loop
-
-        var html = '';
-
-        for(var i = 0; i < 3; i++){
-                html += "<div class='info'>";
-                html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
-                html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
-                html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
-                html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
-                html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
-                html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
-                html += "</div>";
-            }
-
-            $('#main').html(html);
+    // $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken +'/29.4241,-98.4936').done(function(data){
+    //     console.log(data);
+    //
+    //     // creating html with for loop
+    //
+    //     var html = '';
+    //
+    //     for(var i = 0; i < 3; i++){
+    //             html += "<div class='info'>";
+    //             html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+    //             html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
+    //             html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
+    //             html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
+    //             html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
+    //             html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
+    //             html += "</div>";
+    //         }
+    //
+    //         $('#main').html(html);
 
     // this function compares my icons with the API's weather icons
 
@@ -148,33 +143,7 @@
            }
         }
 
-    // jquery that takes in longitude and latitude inputs and plugs it into GET request
-
-        $('.btn').click(function(){
-            var inputlat = $('.lat').val();
-            var inputlon = $('.lon').val();
-            $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken + "/" + inputlat + ',' + inputlon).done(function(data) {
-                console.log(data);
-                var html = '';
-
-                for(var i = 0; i < 3; i++){
-                    html += "<div class='info'>";
-                    html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
-                    html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
-                    html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
-                    html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
-                    html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
-                    html += "<p>" + "<strong>" + "Pressure: " + "</strong>"+ data.daily.data[i].pressure +"</p>";
-                    html += "</div>";
-                }
-
-                $('#main').html(html);
-            });
-
-        });
-
         //mapbox info
-
 
         mapboxgl.accessToken = mapBoxToken;
         var map = new mapboxgl.Map({
@@ -186,17 +155,58 @@
         });
 
 
+    // marker for mapbox
 
-
-
-        // marker for mapbox
         var marker = new mapboxgl.Marker({
             draggable: true
         })
             .setLngLat([-98.4916, 29.4252])
             .addTo(map);
 
-    });
+
+        // map.addControl(new MapboxGeocoder({
+        //     accessToken: mapboxgl.accessToken,
+        //     mapboxgl: mapboxgl
+        // }));
+
+
+
+        function onDragEnd() {
+
+
+            var lngLat = marker.getLngLat();
+            console.log(lngLat);
+
+            var lng = lngLat.lng ;
+                var lat = lngLat.lat;
+
+        $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/'+ darkSkyToken + "/" + lat + ',' + lng).done(function(data) {
+            var html = '';
+
+            for (var i = 0; i < 3; i++) {
+                html += "<div class='info'>";
+                html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+                html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
+                html += "<p>" + "<strong>" + "Clouds: " + "</strong>" + data.daily.data[i].summary + "</p>";
+                html += "<p>" + "<strong>" + "Humidity: " + "</strong>" + data.daily.data[i].humidity + "</p>";
+                html += "<p>" + "<strong>" + "Wind: " + "</strong>" + data.daily.data[i].windSpeed + "</p>";
+                html += "<p>" + "<strong>" + "Pressure: " + "</strong>" + data.daily.data[i].pressure + "</p>";
+                html += "</div>";
+            }
+            $('#main').html(html);
+        });
+
+        }
+        marker.on('dragend', onDragEnd);
+
+
+
+
+
+
+
+
+    // });
 
 
 

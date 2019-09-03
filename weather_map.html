@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Weather Map</title>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         .info{
             background-color: #EED0D4;
@@ -26,19 +27,6 @@
             align-items: center;
         }
 
-        .coordinates {
-            background: rgba(0,0,0,0.5);
-            color: #fff;
-            position: absolute;
-            bottom: 40px;
-            left: 10px;
-            padding:5px 10px;
-            margin: 0;
-            font-size: 11px;
-            line-height: 18px;
-            border-radius: 3px;
-            display: none;
-        }
 
 
     </style>
@@ -49,16 +37,22 @@
 <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 
 <!--main div my days for weather will go into-->
+<!--    <h1>3 Day Forecast</h1>-->
     <div id="main">
 
     </div>
 
 <!--    mapbox style div-->
     <div id="map-container">
-        <div id='map' style='width: 870px; height: 400px;'></div>
+        <div id='map' style='width: 2000px; height: 530px;'></div>
     </div>
     <pre id='coordinates' class='coordinates'></pre>
 
+
+
+<!--bootstrap-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- js scripts-->
 <script src="js/keys.js"></script>
 <script src="js/mapbox-utils.js"></script>
@@ -120,11 +114,13 @@
         // creating html with for loop
 
         var html = '';
+        var dates = checkDate(data);
 
         for(var i = 0; i < 3; i++){
-                html += "<div class='info'>";
-                html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+                html += "<div class='info container-fluid'>";
+                html += "<h3>" + dates[i] + "</h3>";
                 html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
+                html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
                 html += "<p>" + "<strong>" + "Clouds: " + "</strong>"+ data.daily.data[i].summary +"</p>";
                 html += "<p>" + "<strong>" + "Humidity: " + "</strong>"+ data.daily.data[i].humidity +"</p>";
                 html += "<p>" + "<strong>" + "Wind: " + "</strong>"+ data.daily.data[i].windSpeed +"</p>";
@@ -171,6 +167,10 @@
         accessToken: mapboxgl.accessToken
     }));
 
+    //this adds zoom navigation and disables scroll to keep from marker jumping around
+    map.addControl(new mapboxgl.NavigationControl());
+        map.scrollZoom.disable();
+
     // this moves my draggable marker to new searched location and updates weather.
         map.on("moveend", function() {
             marker.setLngLat(map.getCenter());
@@ -187,11 +187,13 @@
 
             $.get('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/' + darkSkyToken + "/" + lat + ',' + lng).done(function (data) {
                 var html = '';
+                var dates = checkDate(data);
 
                 for (var i = 0; i < 3; i++) {
-                    html += "<div class='info'>";
-                    html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
+                    html += "<div class='info container-fluid'>";
+                    html += "<h3>" + dates[i] + "</h3>";
                     html += "<h2>" + data.daily.data[i].temperatureMin + "° /" + " " + data.daily.data[i].temperatureMax + "°" + "</h2>";
+                    html += "<img src='" + checkIcon(icons, data.daily.data[i].icon) + "'>";
                     html += "<p>" + "<strong>" + "Clouds: " + "</strong>" + data.daily.data[i].summary + "</p>";
                     html += "<p>" + "<strong>" + "Humidity: " + "</strong>" + data.daily.data[i].humidity + "</p>";
                     html += "<p>" + "<strong>" + "Wind: " + "</strong>" + data.daily.data[i].windSpeed + "</p>";
@@ -205,10 +207,20 @@
         marker.on('dragend', onDragEnd);
 
 
+        //this function checks the date to display in HTML
+        function checkDate (data) {
+            var dates = [];
+            for (var i = 0; i < 3; i++) {
+
+                var date = new Date(data.daily.data[i].time * 1000 + 3600000);
+                dates.push(date);
+                console.log(dates);
+            }
+            return dates;
+        }
+
+
     });
-
-
-
 
 
 

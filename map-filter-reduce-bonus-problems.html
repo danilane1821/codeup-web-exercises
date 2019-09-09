@@ -151,18 +151,40 @@
 
 
         let nameLength = pets.filter(pet =>{
-            if(pet.breed === 'pug'){
-                return pet.name.length
+            if(pet.breed === 'Pug'){
+                return true;
             }
-
-        });
-        console.log(nameLength);
+        }).map(pugName => pugName.name.length);
+        // console.log(nameLength);
 
         // PROBLEM 7 - create a function getFemaleFamilyMembers() that when given the family variable as an argument,
         // returns an array of female family member names
 
+        const getFemaleFamilyMembers = family.filter(female => {
+            if(female.gender === "female"){
+                return true;
+            }
+        }).map(femaleName => femaleName.name);
+
+        // console.log(getFemaleFamilyMembers);
+
+
         // PROBLEM 8 - create a function makeLongPetString() that when given the variable of pets,
         // returns a string of all property values with dashes separating each property value
+
+        const makeLongPetString = pets.reduce((longString, pet, i) => {
+            if(i < pets.length -1) {
+                longString += `${pet.name}-${pet.age}-${pet.breed}-`;
+            }else {
+                longString += `${pet.name}-${pet.age}-${pet.breed}`
+
+            }
+            return longString;
+        }," ");
+
+        console.log(makeLongPetString);
+
+
 
         // PROBLEM 9 - create a function that when given an array of first names, returns an array of the same names with a last name of Smith
 

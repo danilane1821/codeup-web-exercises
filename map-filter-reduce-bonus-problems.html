@@ -90,7 +90,7 @@
         // PROBLEM 1 - create an array of the first letters of each fruit
 
         let firstLetter = fruits.map(fruit => fruit.charAt(0));
-        console.log(firstLetter);
+        // console.log(firstLetter);
 
 
 
@@ -100,18 +100,30 @@
 
 
         let users = customers.map( customer => {return {name:customer.name, age:customer.age}});
-        console.log(users);
+        // console.log(users);
 
 
 
         // PROBLEM 3 - create an array of civil servant customers (teachers and police officers)
         // containing the same properties as the objects on the customers objects
 
-
+        let civilServant = customers.filter(person => {
+            if( person.occupation ===  "Teacher" || person.occupation ===  "Police Officer" ){
+                return person;
+            }
+        });
+        // console.log(civilServant);
 
 
 
         // PROBLEM 4 - determine the average age of customers
+
+        let ages = customers.reduce((total, user) => {
+            return total + user.age / customers.length
+        }, 0);
+
+        // console.log(ages);
+
 
         // PROBLEM 5 - create a function makeSuperPet() that takes in the pets array as input and returns a single pet object
         // with the following shape...
@@ -125,9 +137,26 @@
 
          */
 
+        const makeSuperPet = arr =>
+            arr.reduce((superPet, pet) => {
+                superPet.name += pet.name;
+                superPet.age += pet.age;
+                superPet.breed += pet.breed.charAt(0);
+                return superPet;
+            }, {name: "", age: 0, breed: ""});
+        // console.log(makeSuperPet(pets));
+
         // PROBLEM 6 - take in an array of pets and return an array of the length of first names for pugs only
         // your output for the given input should be [3, 6] for 'Bud' and 'Bowser'
 
+
+        let nameLength = pets.filter(pet =>{
+            if(pet.breed === 'pug'){
+                return pet.name.length
+            }
+
+        });
+        console.log(nameLength);
 
         // PROBLEM 7 - create a function getFemaleFamilyMembers() that when given the family variable as an argument,
         // returns an array of female family member names

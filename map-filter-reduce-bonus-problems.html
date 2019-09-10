@@ -188,18 +188,13 @@
 
         // PROBLEM 9 - create a function that when given an array of first names, returns an array of the same names with a last name of Smith
 
-        let input = ['Sally', 'Fred', 'Steve']
+        let input = ['Sally', 'Fred', 'Steve'];
         // output = ['Sally Smith', 'Fred Smith', 'Steve']
 
 
-        const addLastName = input.reduce((firstLastName, name) => {
-           // console.log(firstLastName);
-           name += ` Smith`;
-           // console.log(name);
-            return [`${firstLastName} '${name}',`];
-        },"");
+        const addLastName = input.map(names => `${names} Smith`);
+        console.log(addLastName);
 
-        // console.log(addLastName);
 
 
         // PROBLEM 10 - create a function that when given an array of numbers, returns the sum of even numbers
@@ -214,9 +209,19 @@
         }).reduce((total, num)=>{
             return total + num;
     },0);
-        console.log(sumOfEven)
+        // console.log(sumOfEven)
 
         // PROBLEM 11 - create a function that when given an array of numbers, returns the sum of all numbers evenly divisible by 10
+
+        const divisibleByTen = arrNumbers.filter(num => {
+            if(num % 10 === 0){
+                return true;
+            }
+
+        }).reduce((total, num)=>{
+            return total + num;
+        },0);
+
 
         // PROBLEM 12 - create a function that when given an array of names, returns a string of all the first letters of each name
 

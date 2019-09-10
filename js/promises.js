@@ -44,5 +44,12 @@
 
 
 // fetch exercise
+function lastCommit (userName) {
+    return fetch('https://api.github.com/', {headers: {'Authorization': githubToken}})
+        .then((response) => {
+            return response.json();
+        }).then((data) =>{
+            console.log(data);
+        })
 
-
+}

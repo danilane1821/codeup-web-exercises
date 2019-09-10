@@ -45,11 +45,14 @@
 
 // fetch exercise
 function lastCommit (userName) {
-    return fetch('https://api.github.com/', {headers: {'Authorization': githubToken}})
+    return fetch(`https://api.github.com/users/${userName}/events/public`, {headers: {'Authorization': githubToken}})
         .then((response) => {
+            console.log(response);
             return response.json();
-        }).then((data) =>{
-            console.log(data);
-        })
+        }).then((gitObject) => {
+            console.log(gitObject)
+        }).then(data.commit_comment)
 
 }
+
+console.log(lastCommit('danilane1821'));

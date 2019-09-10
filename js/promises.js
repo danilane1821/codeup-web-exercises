@@ -45,14 +45,14 @@
 
 // fetch exercise
 function lastCommit (userName) {
-    return fetch(`https://api.github.com/users/${userName}/events/public`, {headers: {'Authorization':` token ${githubToken}`}})
+    return fetch(`https://api.github.com/users/${userName}/events/public`, {headers: {'Authorization': ` token ${githubToken}`}})
         .then((response) => {
-            console.log(response);
+            // console.log(response);
             return response.json();
-        }).then((gitObject) => {
-            console.log(gitObject)
-        }).then()
+        }).then(gitObject => gitObject.filter(function (object) {
+                return object.type === "PushEvent";
+            })).then(event => console.log(event[0].created_at));
+
 
 }
-
 console.log(lastCommit('danilane1821'));

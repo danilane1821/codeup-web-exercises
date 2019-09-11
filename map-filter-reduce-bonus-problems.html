@@ -155,34 +155,39 @@
                 return true;
             }
         }).map(pugName => pugName.name.length);
-        console.log(nameLength);
+        // console.log(nameLength);
 
         // PROBLEM 7 - create a function getFemaleFamilyMembers() that when given the family variable as an argument,
         // returns an array of female family member names
 
-        const getFemaleFamilyMembers = family.filter(female => {
-            if(female.gender === "female"){
-                return true;
-            }
-        }).map(femaleName => femaleName.name);
 
-        // console.log(getFemaleFamilyMembers);
+        const getFemaleFamilyMembers = (x) => {
+             return x.filter((female) => female.gender === 'female').map(femaleName => femaleName.name);
+        };
+
+        // console.log(getFemaleFamilyMembers(family));
 
 
         // PROBLEM 8 - create a function makeLongPetString() that when given the variable of pets,
         // returns a string of all property values with dashes separating each property value
 
-        const makeLongPetString = pets.reduce((longString, pet, i) => {
-            if(i < pets.length -1) {
-                longString += `${pet.name}-${pet.age}-${pet.breed}-`;
-            }else {
-                longString += `${pet.name}-${pet.age}-${pet.breed}`
+        const makeLongPetString = (x) => {
+            let newString = "";
+            x.reduce((longString, pet, i) => {
 
-            }
-            return longString;
-        }," ");
+                if (i < x.length - 1) {
+                    longString += `${pet.name}-${pet.age}-${pet.breed}-`;
 
-        // console.log(makeLongPetString);
+                } else {
+                    longString += `${pet.name}-${pet.age}-${pet.breed}`;
+                    console.log(longString)
+                }
+                return newString = longString;
+            }, " ");
+           return newString;
+        };
+
+        // console.log(makeLongPetString(pets));
 
 
 
@@ -192,8 +197,10 @@
         // output = ['Sally Smith', 'Fred Smith', 'Steve']
 
 
-        const addLastName = input.map(names => `${names} Smith`);
-        // console.log(addLastName);
+        const addLastName = (x) => {
+            return x.map(names => `${names} Smith`);
+        };
+        // console.log(addLastName(input));
 
 
 
@@ -201,39 +208,53 @@
 
         let arrNumbers = [1,6,2,8,7];
 
-        const sumOfEven = arrNumbers.filter(num => {
-            if(num % 2 === 0){
-                return true;
-            }
+        const sumOfEven = (x) => {
+            let sum = 0;
+            x.filter(num => {
+                if (num % 2 === 0) {
+                    return true;
+                }
 
-        }).reduce((total, num)=>{
-            return total + num;
-    },0);
-        // console.log(sumOfEven)
+            }).reduce((total, num) => {
+                return sum = total + num;
+            }, 0);
+            return sum;
+        };
+        // console.log(sumOfEven(arrNumbers));
 
         // PROBLEM 11 - create a function that when given an array of numbers, returns the sum of all numbers evenly divisible by 10
         let numbers = [2,20,5,16,30,6];
 
-        const divisibleByTen = numbers.filter(num => {
-            if(num % 10 === 0){
-                // console.log(num);
-                return true;
-            }
+        const divisibleByTen = (x) => {
+            let sum = 0;
+            x.filter(num => {
+                if (num % 10 === 0) {
+                    // console.log(num);
+                    return true;
+                }
 
-        }).reduce((total, num)=>{
-            return total + num;
-        },0);
-        // console.log(divisibleByTen);
+            }).reduce((total, num) => {
+                return sum = total + num;
+            }, 0);
+            return sum;
+        };
+        // console.log(divisibleByTen(numbers));
 
         // PROBLEM 12 - create a function that when given an array of names, returns a string of all the first letters of each name
 
         let names = ["Dani","Oscar","George","Sally","Robert","Ulysses","Laura","Edward"];
-        const takeFirstLetter = names.reduce((newString, name) =>{
-            return `${newString}${name.charAt(0)}`;
 
-    },"");
 
-        console.log(takeFirstLetter);
+        const takeFirstLetter = (x) => {
+            let str = "";
+            x.reduce((newString, name) => {
+                return str = `${newString}${name.charAt(0)}`;
+
+            }, "");
+            return str;
+        };
+
+        // console.log(takeFirstLetter(names));
 
         // PROBLEM 13 - create a function that when given an array of values, returns an array of only the truthy values
 
@@ -248,12 +269,11 @@
         // PROBLEM 15 - create a function that when given an object, returns the property values as an array of elements
         const obj = { 0: 'a', 1: 'b', 2: 'c' };
 
-            console.log(Object.values(obj));
+            // console.log(Object.values(obj));
 
 
         // PROBLEM 16 - create a function that when given three arguments: a min num, a max num, an array
         // of nums will return the array of nums that are only between the min and max values, inclusive
-
 
 
 

@@ -155,7 +155,7 @@
                 return true;
             }
         }).map(pugName => pugName.name.length);
-        // console.log(nameLength);
+        console.log(nameLength);
 
         // PROBLEM 7 - create a function getFemaleFamilyMembers() that when given the family variable as an argument,
         // returns an array of female family member names
@@ -193,13 +193,13 @@
 
 
         const addLastName = input.map(names => `${names} Smith`);
-        console.log(addLastName);
+        // console.log(addLastName);
 
 
 
         // PROBLEM 10 - create a function that when given an array of numbers, returns the sum of even numbers
 
-        let arrNumbers = [1,5,2,8,7];
+        let arrNumbers = [1,6,2,8,7];
 
         const sumOfEven = arrNumbers.filter(num => {
             if(num % 2 === 0){
@@ -212,27 +212,50 @@
         // console.log(sumOfEven)
 
         // PROBLEM 11 - create a function that when given an array of numbers, returns the sum of all numbers evenly divisible by 10
+        let numbers = [2,20,5,16,30,6];
 
-        const divisibleByTen = arrNumbers.filter(num => {
+        const divisibleByTen = numbers.filter(num => {
             if(num % 10 === 0){
+                // console.log(num);
                 return true;
             }
 
         }).reduce((total, num)=>{
             return total + num;
         },0);
-
+        // console.log(divisibleByTen);
 
         // PROBLEM 12 - create a function that when given an array of names, returns a string of all the first letters of each name
 
+        let names = ["Dani","Oscar","George","Sally","Robert","Ulysses","Laura","Edward"];
+        const takeFirstLetter = names.reduce((newString, name) =>{
+            return `${newString}${name.charAt(0)}`;
+
+    },"");
+
+        console.log(takeFirstLetter);
+
         // PROBLEM 13 - create a function that when given an array of values, returns an array of only the truthy values
+
+        const returnTruthyValues = someArray => someArray.filter(value => value == true);
+        // console.log(returnTruthyValues([true, false, 1, 0, "Hello", null]));
+
+
 
         // PROBLEM 14 - create a function that when given an object, returns the property values as an array of elements
 
+
         // PROBLEM 15 - create a function that when given an object, returns the property values as an array of elements
+        const obj = { 0: 'a', 1: 'b', 2: 'c' };
+
+            console.log(Object.values(obj));
+
 
         // PROBLEM 16 - create a function that when given three arguments: a min num, a max num, an array
         // of nums will return the array of nums that are only between the min and max values, inclusive
+
+
+
 
         // PROBLEM 17 - create a function that when given an array of strings, returns an array of objects
         // with properties for the given string value and the length of the string and the string without vowels (not including y)

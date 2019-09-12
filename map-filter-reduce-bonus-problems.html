@@ -263,9 +263,6 @@
 
 
 
-        // PROBLEM 14 - create a function that when given an object, returns the property values as an array of elements
-
-
         // PROBLEM 15 - create a function that when given an object, returns the property values as an array of elements
         const obj = { 0: 'a', 1: 'b', 2: 'c' };
 
@@ -275,10 +272,36 @@
         // PROBLEM 16 - create a function that when given three arguments: a min num, a max num, an array
         // of nums will return the array of nums that are only between the min and max values, inclusive
 
-
+        const valuesBetween = (min, max, inputArray) => {
+            return inputArray.filter(currentNumber => currentNumber > min && currentNumber < max);
+        };
+        // console.log(valuesBetween(5, 50, [0, 1, 2, 3, 4, 5, 10, 15, 20, 45, 50, 55]));
 
         // PROBLEM 17 - create a function that when given an array of strings, returns an array of objects
         // with properties for the given string value and the length of the string and the string without vowels (not including y)
+            const arrOfStrings = ['hello','good morning', 'goodbye', 'good night'];
+
+
+
+        const createObject = (someArr) => {
+            let vowels = 'AEIOUaeiou';
+            let newArrObj = {};
+            someArr.map(str => {
+                let newObj =
+                [
+                    {
+                        name: str,
+                        length: str.length,
+                    }
+                    ];
+                return newObj = newArrObj;
+            });
+            console.log(newArrObj);
+            return newArrObj;
+
+        };
+        console.log(createObject(arrOfStrings));
+
 
     }
 

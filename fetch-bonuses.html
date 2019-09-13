@@ -7,8 +7,9 @@
 <body>
 
 <input id="inp" type="text">
-<button type="button">Click Me!</button>
+<button id="button" type="button">Click Me!</button>
 
+<script src="js/jquery.js"></script>
 <script>
 
 
@@ -29,9 +30,29 @@
     //
     //
 
+    let userName;
 
 
+    const userColor = (userName) => {
+        fetch('./data/profiles.json')
+        .then(response => response.json())
+        .then((data) => {
+            $('body').css('background-color', data[userName]);
+        })
+        .catch(error => console.error(error))
 
+    };
+
+
+        $('#button').click(function () {
+
+            // variable being defined by string from input bar
+            userName = $('#inp').val();
+
+            // calling our fetch method to get json
+            userColor(userName);
+
+        });
 
 
     //
@@ -40,11 +61,9 @@
     // Using the Star Wars API, log the first film a Star Wars character's homeworld appeared in
 
 
-
     // -- Ex. 3
     //
     // Using the GitHub API and reduce(), find the average hour of the last 3 pushes. Ignore minutes.
-
 
 
     // -- Ex. 4
@@ -70,8 +89,6 @@
     //     It will look something like the following...
 
     // ['Jakku', 'Tatooine', 'Tatooine']
-
-
 
 
 </script>

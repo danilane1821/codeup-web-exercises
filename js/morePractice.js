@@ -52,3 +52,26 @@ function middleThree(str){
 
 console.log(middleThree("rower"));
 console.log(middleThree("row"));
+
+
+
+function seeColor(str){
+    if(str.slice(0,3) == "red"){
+        return str.slice(0,3);
+    }else if(str.slice(0,4) == "blue"){
+        return str.slice(0,4);
+    }else{
+        return "";
+    }
+}
+
+function firstTwo(str){
+    if(str.length <= 2){
+        return str;
+    }else if(str.length > 2){
+        return str.slice(0,2);
+    }else {
+        return "";
+    }
+
+}
